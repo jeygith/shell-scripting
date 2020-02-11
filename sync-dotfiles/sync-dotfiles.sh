@@ -18,7 +18,7 @@ GIT=`which git`
 REPO_DIR=~/dotfiles
 cd ${REPO_DIR}
 echo ${pwd}
-add=$({GIT} add . 2>&1)
+add=$(${GIT} add . 2>&1)
 
 echo "$add"
 

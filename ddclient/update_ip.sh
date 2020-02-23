@@ -8,8 +8,8 @@ declare secret=3Ef22XoBTj3AnQE1
 
 declare domain=githire-svr
 
-declare url="https://dyn.jeffgithire.dev/update?secret=${secret}&domain=${domain}&addr=${wanip4}"
+declare url="http://64.227.45.220:8080/update?secret=${secret}&domain=${domain}&addr=${wanip4}"
 
 echo ${url}
 
-curl -s "https://dyn.jeffgithire.dev/update?secret=${secret}&domain=${domain}&addr=${wanip4}"
+curl -s "${url}"

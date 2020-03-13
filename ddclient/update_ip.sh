@@ -10,7 +10,11 @@ declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
 
 declare secret=3Ef22XoBTj3AnQE1
 
-declare -a domains=(githire-svr transmission transmission.githire-svr pihole.githire-svr)
+declare -a domains=(githire-svr transmission
+                    transmission.githire-svr pihole.githire-svr plex.githire-svr
+                    headphones.githire-svr tautulli.githire-svr sonarr.githire-svr
+                    couchpotato.githire-svr
+                    )
 
 for domain in "${domains[@]}"; do
   declare url="http://64.227.45.220:8080/update?secret=${secret}&domain=${domain}&addr=${wanip4}"

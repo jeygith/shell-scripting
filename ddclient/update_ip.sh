@@ -13,7 +13,7 @@ declare secret=3Ef22XoBTj3AnQE1
 declare -a domains=(githire-svr transmission
                     transmission.githire-svr pihole.githire-svr plex.githire-svr
                     headphones.githire-svr tautulli.githire-svr sonarr.githire-svr
-                    couchpotato.githire-svr
+                    couchpotato.githire-svr jackett.githire-svr
                     )
 
 for domain in "${domains[@]}"; do

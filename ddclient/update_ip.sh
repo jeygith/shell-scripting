@@ -12,6 +12,9 @@ declare currentIP=$(dig @resolver1.opendns.com A githire-svr.dyn.jeffgithire.dev
 # ipv4 address octet
 octet="(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])"
 
+# avoid zeros on the left
+#octet="(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])"
+
 # ipv4 address regex pattern
 ip4="^$octet\\.$octet\\.$octet\\.$octet$"
 

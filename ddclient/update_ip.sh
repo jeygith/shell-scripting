@@ -9,10 +9,18 @@ declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
 
 declare currentIP=$(dig @resolver1.opendns.com A githire-svr.dyn.jeffgithire.dev +short -4)
 
-if [ "$wanip4" = "$currentIP" ]; then
-  echo "Ips are equal: not updating"
-  echo "${currentIP} equal to ${wanip4}"
-else
+# ipv4 address octet
+octet="(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])"
+
+# ipv4 address regex pattern
+ip4="^$octet\\.$octet\\.$octet\\.$octet$"
+
+# check if valid ip addresses, and compare if the addresses are similar
+
+if [[ $wanip4 =~ $ip4 ]] && [[ $currentIP =~ $ip4 ]] && [[ "$wanip4" != "$currentIP" ]]; then
+  # if ipaddresses are not similar, update the ip addresses upstream
+  echo y
+
   echo "Ip needs updating: "
   echo "currentIP: ${currentIP}"
   echo "wanip4: ${wanip4}"
@@ -41,6 +49,10 @@ else
     # make curl call to update the ip for the various domains
     curl -s "${url}"
   done
+else
+  echo "Ips are equal or not valid: not updating"
+  echo "currentIP: ${currentIP}"
+  echo "wanip4: ${wanip4}"
 fi
 
 exit

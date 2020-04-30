@@ -5,16 +5,20 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Recycle bin clean up at: ${DATE}"
 
-#declare recycleBinPath="/media/2TB/docker-recycle-bin/"
-declare recycleBinPath=$(pwd)
+declare recycleBinPath="/media/2TB/docker-recycle-bin/"
+#declare recycleBinPath=$(pwd)
 
 declare -a paths=(radarr sonarr lidarr)
 
 for path in "${paths[@]}"; do
   path="${recycleBinPath}/${path}"
-  echo ${path};
 
   # clean up files and folders older than 7 days
+  files=$(find ${path} -mtime 7)
 
-  find ${path} -mtime -1 -delete
+  echo""
+  echo ">>>>>>Files to delete>>>>>>>"
+  echo""
+  echo "${files[@]}" | tr ' ' '\n'
+  find ${path} -mtime 7 -delete
 done

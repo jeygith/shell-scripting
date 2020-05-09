@@ -7,7 +7,7 @@ echo "IP update at: ${DATE}"
 
 declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
 
-declare currentIP=$(dig @resolver1.opendns.com A githire-svr.dyn.jeffgithire.dev +short -4)
+declare currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4)
 
 # ipv4 address octet
 octet="(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])"

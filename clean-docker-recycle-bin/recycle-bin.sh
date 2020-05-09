@@ -5,7 +5,7 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Recycle bin clean up at: ${DATE}"
 
-declare recycleBinPath="/media/2TB/docker-recycle-bin/"
+declare recycleBinPath="/media/2TB/docker-recycle-bin"
 #declare recycleBinPath=$(pwd)
 
 declare -a paths=(radarr sonarr lidarr)

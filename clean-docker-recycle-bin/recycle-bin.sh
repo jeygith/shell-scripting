@@ -21,4 +21,8 @@ for path in "${paths[@]}"; do
   echo""
   echo "${files[@]}" | tr ' ' '\n'
   find ${path} -mtime 7 -delete
+  
+  echo ""
+  echo ">>>>> mkdir -p  ${path}"
+  mkdir -p ${path}
 done

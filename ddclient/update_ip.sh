@@ -45,7 +45,7 @@ if [[ $wanip4 =~ $ip4 ]] && [[ $currentIP =~ $ip4 ]] && [[ "$wanip4" != "$curren
     fi
 
     #construct the url
-    declare url="http://64.227.45.220:8080/update?secret=${secret}&domain=${domain}&addr=${wanip4}"
+    declare url="https://dyndns.jeffgithire.dev/update?secret=${secret}&domain=${domain}&addr=${wanip4}"
 
     echo ${url}
 

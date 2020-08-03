@@ -7,7 +7,7 @@ echo "IP update at: ${DATE}"
 
 declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
 
-declare currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4)
+declare currentIP=$(dig @ns.jeffgithire.dev A plex.githire-svr.dyn.jeffgithire.dev +short -4)
 
 # ipv4 address octet
 octet="(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])"
@@ -33,7 +33,7 @@ if [[ $wanip4 =~ $ip4 ]] && [[ $currentIP =~ $ip4 ]] && [[ "$wanip4" != "$curren
   declare -a domains=(githire-svr transmission
     pihole plex headphones tautulli sonarr
     couchpotato jackett radarr lidarr unms lazylibrarian
-    ombi heimdall calibre calibre-svr preview
+    ombi heimdall calibre calibre-svr preview hass nodered erx router
   )
 
   for domain in "${domains[@]}"; do

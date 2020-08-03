@@ -13,14 +13,14 @@ declare -a paths=(radarr sonarr lidarr)
 for path in "${paths[@]}"; do
   path="${recycleBinPath}/${path}"
 
-  # clean up files and folders older than 7 days
-  files=$(find ${path} -mtime 7)
+  # clean up files and folders older than ++`++++7 days
+  files=$(find ${path} -mtime +7)
 
   echo""
   echo ">>>>>>Files to delete>>>>>>>"
   echo""
   echo "${files[@]}" | tr ' ' '\n'
-  find ${path} -mtime 7 -delete
+  find ${path} -mtime +7 -exec rm -Rf {} \;
   
   echo ""
   echo ">>>>> mkdir -p  ${path}"

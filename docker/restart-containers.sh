@@ -1,10 +1,8 @@
 #!/bin/bash
 
-declare -a containers=(calibre
+declare -a containers=(
+  calibre
   calibre-web
-  docker-couchpotato
-  docker-headphones
-  docker-jackett
   headphones
   heimdall
   home-assistant

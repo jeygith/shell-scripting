@@ -55,6 +55,7 @@ wget -O "Mos Mos (feat Brenda).mp3" https://s3.eu-central-1.amazonaws.com/conten
 wget -O "Saree.mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1473264012_1386289857_1294067499_comp_96.mp3
 wget -O "Wika(feat Kayruz).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/328229139_2001642666_1977652699_comp_96.mp3
 wget -O "Yabamba" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1942497543_2065423556_2111061359_comp_96.mp3
+wget -O "The Double Trouble Mixxtape 2020 Volume 51 Amapiano Edition.mp4" https://player.vimeo.com/play/1940428201?s=443085198_1596456337_c2b7a9e2064f67301bb366ac0209702f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
 
 
@@ -78,3 +79,17 @@ g862009115b0a48878caeac9d38d3840d
 
 
 https://hass.githire-svr.dyn.jeffgithire.dev/auth/external/callback
+
+
+sudo umount -l /media/*
+sudo systemctl restart autofs
+sudo systemctl restart docker
+
+
+875262663728-hu7ajj568scruit1ha02bm7e70kespeb.apps.googleusercontent.com
+Gjy6srFUCkc_vIAsMn-auN_2
+
+
+// saf ppoe
+11186698@gpon
+4f8224e09511627bd85daa3dea225ed3fb3be608f8f103df4d061ae7bf508065

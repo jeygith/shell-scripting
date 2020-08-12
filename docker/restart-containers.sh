@@ -28,5 +28,5 @@ declare -a containers=(calibre
 )
 
 for container in "${containers[@]}"; do
-  cd "/home/githire/docker/${container}" && docker-compose down && docker-compose up -d
+  cd "/home/githire/docker/${container}" && docker-compose up -d
 done

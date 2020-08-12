@@ -17,7 +17,6 @@ for path in "${paths[@]}"; do
   files=$(find ${path} -mtime +7)
 
   if [ -z "$files" ]; then
-    echo "empty"
   else
     echo""
     echo ">>>>>>Files to delete>>>>>>>"

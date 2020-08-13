@@ -93,3 +93,14 @@ Gjy6srFUCkc_vIAsMn-auN_2
 // saf ppoe
 11186698@gpon
 4f8224e09511627bd85daa3dea225ed3fb3be608f8f103df4d061ae7bf508065
+
+
+
+# create virtual hosts
+sudo cp /etc/httpd/sites-available/varken.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo vim /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo ln -s /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/mqtt.githire-svr.dyn.jeffgithire.dev
+sudo systemctl restart httpd
+
+certbot --apache

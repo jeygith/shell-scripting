@@ -23,6 +23,7 @@ declare -a containers=(
   transmission
   ubooquity
   varken
+  watchtower
 )
 
 for container in "${containers[@]}"; do

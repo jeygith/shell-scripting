@@ -53,7 +53,9 @@ wget -O "Saree.mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.co
 wget -O "Wika(feat Kayruz).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/328229139_2001642666_1977652699_comp_96.mp3
 wget -O "Yabamba" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1942497543_2065423556_2111061359_comp_96.mp3
 
+wget -O "Dj Protege - Madaraka Day Throwback Quarantine Mix (PVE Vol 47).mp4" https://player.vimeo.com/play/1847442188?s=426247137_1596283854_126974ccaf604bf1e33c015dc0e4c149&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
+wget -O "Dj Protege - Funky Disco part 1 (PVE vol 49).mp4" https://player.vimeo.com/play/1953368266?s=445507330_1596800319_8bbca4a491c1c0a29b521f36150706f7&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
 E-sir - Jobless Corner 1 (Skit)
@@ -74,4 +76,12 @@ E-sir - Kamaiko (Skit)
 g862009115b0a48878caeac9d38d3840d
 
 
+
+
 https://hass.githire-svr.dyn.jeffgithire.dev/auth/external/callback
+
+
+
+5 3 * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d 2>&1 | /usr/bin/logger -t restart_librenms_330am
+
+* * * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose logs 2>&1 | /usr/bin/logger -t restart_librenms_330am

@@ -16,13 +16,18 @@ for path in "${paths[@]}"; do
   # clean up files and folders older than ++`++++7 days
   files=$(find ${path} -mtime +7)
 
-  echo""
-  echo ">>>>>>Files to delete>>>>>>>"
-  echo""
-  echo "${files[@]}" | tr ' ' '\n'
-  find ${path} -mtime +7 -exec rm -Rf {} \;
-  
-  echo ""
+  if [ -z "$files" ]; then
+    echo "";
+  else
+    echo""
+    echo ">>>>>>Files to delete>>>>>>>"
+    echo""
+    echo "${files[@]}" | tr ' ' '\n'
+    rm -rf "${files}"
+    echo ""
+  fi
+
+  # create the placeholder directories
   echo ">>>>> mkdir -p  ${path}"
   mkdir -p ${path}
 done

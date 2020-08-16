@@ -34,6 +34,7 @@ if [[ $wanip4 =~ $ip4 ]] && [[ $currentIP =~ $ip4 ]] && [[ "$wanip4" != "$curren
     pihole plex headphones tautulli sonarr
     couchpotato jackett radarr lidarr unms lazylibrarian
     ombi heimdall calibre calibre-svr preview hass nodered erx router
+    librenms varken mqtt
   )
 
   for domain in "${domains[@]}"; do

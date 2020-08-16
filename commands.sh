@@ -8,6 +8,7 @@ spotify-ripper music/playlists/"Best of Khaligraph Jones.txt" -u githireh@gmail.
 
 spotify-ripper music/playlists/"Lucky you.txt" -u githireh@gmail.com --flac -u githireh@gmail.com -p "_JF)GTWjMddYw35"
 
+spotify-ripper music/playlists/"indie"
 spotify-ripper music/playlists/"on fire"
 
 spotify-ripper music/playlists/"streetbullies.txt"  -f "{artist} - {track_name}.{ext}" --directory "/media/2TB/software/spotify-ripper/music/riddim/Street Bullies Riddim"
@@ -21,6 +22,8 @@ spotify-ripper music/playlists/"message riddim"  -f "{artist} - {track_name}.{ex
 docker run --rm -it -v $(pwd)/Hanyaring\ Game:/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/1qL2zpsXNYVsshy37ezH9Y
 
 docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/5zqUzVRqn6NZxAEeYkl6SN
+
+docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/5HEd4NldckiTSWPjqSAgQA
 
 docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/3HoHpqSqydMwuZioJJEgby
 amzn1.ask.skill.ad68809b-9bf1-4531-a25f-f0cf77497a3a
@@ -52,6 +55,7 @@ wget -O "Mos Mos (feat Brenda).mp3" https://s3.eu-central-1.amazonaws.com/conten
 wget -O "Saree.mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1473264012_1386289857_1294067499_comp_96.mp3
 wget -O "Wika(feat Kayruz).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/328229139_2001642666_1977652699_comp_96.mp3
 wget -O "Yabamba" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1942497543_2065423556_2111061359_comp_96.mp3
+wget -O "The Double Trouble Mixxtape 2020 Volume 51 Amapiano Edition.mp4" https://player.vimeo.com/play/1940428201?s=443085198_1596456337_c2b7a9e2064f67301bb366ac0209702f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
 wget -O "Dj Protege - Madaraka Day Throwback Quarantine Mix (PVE Vol 47).mp4" https://player.vimeo.com/play/1847442188?s=426247137_1596283854_126974ccaf604bf1e33c015dc0e4c149&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
@@ -79,6 +83,31 @@ g862009115b0a48878caeac9d38d3840d
 
 
 https://hass.githire-svr.dyn.jeffgithire.dev/auth/external/callback
+
+
+sudo umount -l /media/*
+sudo systemctl restart autofs
+sudo systemctl restart docker
+
+
+875262663728-hu7ajj568scruit1ha02bm7e70kespeb.apps.googleusercontent.com
+Gjy6srFUCkc_vIAsMn-auN_2
+
+
+// saf ppoe
+11186698@gpon
+4f8224e09511627bd85daa3dea225ed3fb3be608f8f103df4d061ae7bf508065
+
+
+
+# create virtual hosts
+sudo cp /etc/httpd/sites-available/varken.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo vim /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo ln -s /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/mqtt.githire-svr.dyn.jeffgithire.dev
+sudo systemctl restart httpd
+
+certbot --apache
 
 
 

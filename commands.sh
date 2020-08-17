@@ -122,3 +122,9 @@ buttonretain on
 buttonretain off
 
 powerretain on
+
+
+
+ssh -l githire 10.0.0.2  ./home/githire/shell-scripting/docker/remount-disks.sh
+
+/home/githire/shell-scripting/docker

@@ -13,7 +13,6 @@ declare -a containers=(
   librenms
   lidarr
   ombi
-  pihole
   plex
   radarr
   sonarr
@@ -23,9 +22,8 @@ declare -a containers=(
   transmission
   ubooquity
   varken
-  watchtower
 )
 
 for container in "${containers[@]}"; do
-  cd "/home/githire/docker/${container}" && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d
+  cd "/home/githire/docker/${container}" && /usr/local/bin/docker-compose restart
 done

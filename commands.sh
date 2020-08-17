@@ -114,3 +114,11 @@ certbot --apache
 5 3 * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d 2>&1 | /usr/bin/logger -t restart_librenms_330am
 
 * * * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose logs 2>&1 | /usr/bin/logger -t restart_librenms_330am
+
+
+### tasmota
+switchretain off
+buttonretain on
+buttonretain off
+
+powerretain on

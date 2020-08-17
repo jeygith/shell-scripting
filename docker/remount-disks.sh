@@ -6,4 +6,4 @@ echo "Remount disks at: ${DATE}"
 
 #sudo echo "me"
 
-sudo umount -l /media/* && sudo systemctl restart autofs && sudo systemctl restart docker
+sudo umount -l /media/* && sudo systemctl restart autofs && sudo systemctl restart docker && cd /home/githire/docker/home-assistant && docker-compose down && docker-compose up -d

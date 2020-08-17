@@ -25,5 +25,5 @@ declare -a containers=(
 )
 
 for container in "${containers[@]}"; do
-  cd "/home/githire/docker/${container}" && /usr/local/bin/docker-compose restart
+  cd "/home/githire/docker/${container}" && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d
 done

@@ -4,6 +4,6 @@
 DATE=`date '+%Y-%m-%d %H:%M:%S'`
 echo "Remount disks at: ${DATE}"
 
-sudo echo "me"
+#sudo echo "me"
 
-#sudo umount -l /media/* && sudo systemctl restart autofs && sudo systemctl restart docker
+sudo umount -l /media/* && sudo systemctl restart autofs && sudo systemctl restart docker

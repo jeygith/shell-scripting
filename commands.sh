@@ -125,6 +125,8 @@ powerretain on
 
 
 
-ssh -l githire 10.0.0.2  ./home/githire/shell-scripting/docker/remount-disks.sh
+ssh -l githire 10.0.0.2  cd /home/githire/shell-scripting/docker && /usr/bin/sudo ./remount-disks.sh
+
+ssh -l githire 10.0.0.2  "cd /home/githire/shell-scripting/docker && /usr/bin/sudo ./remount-disks.sh"
 
 /home/githire/shell-scripting/docker

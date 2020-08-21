@@ -5,7 +5,7 @@ DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Remount disks at: ${DATE}"
 
 # Test if disks are unmounted
-ls -la /media/openworld
+ls -la /media/8TB
 
 if [ $? -eq 0 ]; then
   echo "No need to restart containers"

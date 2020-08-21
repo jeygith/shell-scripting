@@ -4,17 +4,20 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Remount disks at: ${DATE}"
 
-#sudo echo "me"
-
-# Test if disks are un mounted
+# Test if disks are unmounted
 ls -la /media/openworld
 
 if [ $? -eq 0 ]; then
-  echo OK
+  echo "No need to restart containers"
   exit 0
 else
-  echo FAIL
-  exit 1
+  # remount disks and restart select containers
+  sudo umount -l /media/* && sudo systemctl restart autofs && cd /home/githire/shell-scripting/docker && ./restart-select-containers.sh
+  if [ $? -eq 0 ]; then
+    echo "Remount and container restart OK"
+    exit 0
+  else
+    echo "Error remounting and restarting containers"
+    exit 1
+  fi
 fi
-
-#sudo umount -l /media/* && sudo systemctl restart autofs && cd /home/githire/shell-scripting/docker && ./restart-select-containers.sh

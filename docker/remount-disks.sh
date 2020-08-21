@@ -6,4 +6,12 @@ echo "Remount disks at: ${DATE}"
 
 #sudo echo "me"
 
-sudo umount -l /media/* && sudo systemctl restart autofs && cd /home/githire/shell-scripting/docker && ./restart-select-containers.sh
+ls -la /media/openworld
+
+if [ $? -eq 0 ]; then
+  echo OK
+else
+  echo FAIL
+fi
+
+#sudo umount -l /media/* && sudo systemctl restart autofs && cd /home/githire/shell-scripting/docker && ./restart-select-containers.sh

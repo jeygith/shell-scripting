@@ -4,18 +4,18 @@ DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Restart select containers at: ${DATE}"
 
 declare -a containers=(
+  plex
+  librenms
   calibre
   calibre-web
   headphones
   heimdall
   jackett
   lazylibrarian
-  librenms
-  lidarr
   ombi
-  plex
   radarr
   sonarr
+  lidarr
   spotify-docker-ripper
   spotify-downloader
   tautulli

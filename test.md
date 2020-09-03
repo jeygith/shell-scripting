@@ -37,9 +37,6 @@
 			"fqdn": "calibre-svr.githire-svr.dyn.jeffgithire.dev"
 		},
 		{
-			"fqdn": "couchpotato.githire-svr.dyn.jeffgithire.dev"
-		},
-		{
 			"fqdn": "erx.githire-svr.dyn.jeffgithire.dev"
 		},
 		{
@@ -94,16 +91,7 @@
 			"fqdn": "transmission.githire-svr.dyn.jeffgithire.dev"
 		},
 		{
-			"fqdn": "ubooquity.githire-svr.dyn.jeffgithire.dev"
-		},
-		{
 			"fqdn": "unms.githire-svr.dyn.jeffgithire.dev"
-		},
-		{
-			"fqdn": "unms-s.githire-svr.dyn.jeffgithire.dev"
-		},
-		{
-			"fqdn": "transmission.dyn.jeffgithire.dev"
 		}
 	]
 }

@@ -42,7 +42,65 @@ https://alexa.amazon.co.jp/api/skill/link/M2W4JJDHXI4FIN
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
 
 
-[{"id":"b74ada49.d7e408","type":"server-state-changed","z":"ffbd7f06.4a014","name":"","version":1,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"entityidfilter":"sun.sun","entityidfiltertype":"exact","outputinitially":false,"state_type":"str","haltifstate":"above_horizon","halt_if_type":"str","halt_if_compare":"is","outputs":2,"output_only_on_state_change":true,"x":244,"y":784,"wires":[["1f467cbb.0c3983"],["da5ff3e0.cbb2a"]]},{"id":"1f467cbb.0c3983","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_off","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":784,"wires":[[]]},{"id":"da5ff3e0.cbb2a","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":832,"wires":[[]]}]
+[{"id":"b74ada49.d7e408"
+"type":"server-state-changed"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"exposeToHomeAssistant":false
+"haConfig":[{"property":"name"
+"value":""}
+{"property":"icon"
+"value":""}]
+"entityidfilter":"sun.sun"
+"entityidfiltertype":"exact"
+"outputinitially":false
+"state_type":"str"
+"haltifstate":"above_horizon"
+"halt_if_type":"str"
+"halt_if_compare":"is"
+"outputs":2
+"output_only_on_state_change":true
+"x":244
+"y":784
+"wires":[["1f467cbb.0c3983"]
+["da5ff3e0.cbb2a"]]}
+{"id":"1f467cbb.0c3983"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_off"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":784
+"wires":[[]]}
+{"id":"da5ff3e0.cbb2a"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_on"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":832
+"wires":[[]]}]
 
 
 wget -O "Boomba Train (feat Nameless).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1972501571_845906245_2003203290_comp_96.mp3
@@ -130,3 +188,81 @@ ssh -l githire 10.0.0.2  cd /home/githire/shell-scripting/docker && /usr/bin/sud
 ssh -l githire 10.0.0.2  "cd /home/githire/shell-scripting/docker && /usr/bin/sudo ./remount-disks.sh"
 
 /home/githire/shell-scripting/docker
+
+
+The Shawshank Redemption
+Good Will Hunting
+Forrest Gump
+Pulp Fiction
+American Beauty
+The Usual Suspects
+Eternal Sunshine of the Spotless Mind
+The Green Mile
+Requiem for a Dream
+Fight Club
+Memento
+The Pianist
+Schindler's List
+Confessions
+Inglourious Basterds
+Django Unchained
+Kill Bill: Vol. 1
+Gattaca
+Secretary
+Lars and the Real Girl
+In Bruges
+Blue Valentine
+Submarine
+The Talented Mr. Ripley
+An Education
+Big Fish
+Zindagi Na Milegi Dobara
+Barfi!
+The Departed
+Saving Private Ryan
+Gladiator
+Garden State
+Shutter Island
+Drive
+Being Flynn
+A Beautiful Mind
+Black Swan
+Inception
+Silver Linings Playbook
+A Clockwork Orange
+
+
+
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E01.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E02.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E03.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E04.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E05.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E06.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+
+
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E01.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E02.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E03.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E04.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E05.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E06.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+
+
+https://githire\.text\@gmail.\com:hJi\/A\&ckH8e\/\?\+5@updates.opendns.com/nic/update?hostname=githire-trap
+https://githire.text%40gmail.com:Cyberlink450.@updates.opendns.com/nic/update?hostname=githire-trap
+https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+
+
+curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+
+
+curl --user githire.text@gmail.com:'Cyberlink450.' https://updates.opendns.com/nic/update\?hostname\=githire-trap
+
+### ssh
+permissions
+sudo chmod 700 ~/.ssh && sudo chmod 600 ~/.ssh/* && sudo chmod 644 -f ~/.ssh/*.pub ~/.ssh/authorized_keys ~/.ssh/known_hosts
+
+
+cat .zsh_history /media/8TB/centos-backup/.zsh_history | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}'

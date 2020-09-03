@@ -216,3 +216,12 @@ genpasswd() {
        	[ "$l" == "" ] && l=20
       	tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
+
+
+// nodered-local token
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5NTliZThlYzdjOWQ0ZmU4OGY4NTgzNDFkNGFhZmI1YSIsImlhdCI6MTU5OTE1NDg0NSwiZXhwIjoxOTE0NTE0ODQ1fQ.CsLHoejYoQnp3FZxoA5yZS1v60ry6wvBcd9a5D4jViM
+
+// nodered token
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk

@@ -57,7 +57,9 @@ wget -O "Wika(feat Kayruz).mp3" https://s3.eu-central-1.amazonaws.com/content.sm
 wget -O "Yabamba" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1942497543_2065423556_2111061359_comp_96.mp3
 wget -O "The Double Trouble Mixxtape 2020 Volume 51 Amapiano Edition.mp4" https://player.vimeo.com/play/1940428201?s=443085198_1596456337_c2b7a9e2064f67301bb366ac0209702f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
+wget -O "Dj Protege - Madaraka Day Throwback Quarantine Mix (PVE Vol 47).mp4" https://player.vimeo.com/play/1847442188?s=426247137_1596283854_126974ccaf604bf1e33c015dc0e4c149&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
+wget -O "Dj Protege - Funky Disco part 1 (PVE vol 49).mp4" https://player.vimeo.com/play/1953368266?s=445507330_1596800319_8bbca4a491c1c0a29b521f36150706f7&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/1712873971?s=401144584_1599135300_1dffa5f5c5480c279315b6fafe0c10df&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
@@ -77,6 +79,8 @@ E-sir - Kamaiko (Skit)
 
 
 g862009115b0a48878caeac9d38d3840d
+
+
 
 
 https://hass.githire-svr.dyn.jeffgithire.dev/auth/external/callback
@@ -105,6 +109,106 @@ sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/githire-svr.dy
 sudo systemctl restart httpd
 
 certbot --apache
+
+
+
+5 3 * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d 2>&1 | /usr/bin/logger -t restart_librenms_330am
+
+* * * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose logs 2>&1 | /usr/bin/logger -t restart_librenms_330am
+
+
+### tasmota
+switchretain off
+buttonretain on
+buttonretain off
+
+powerretain on
+
+
+
+ssh -l githire 10.0.0.2  cd /home/githire/shell-scripting/docker && /usr/bin/sudo ./remount-disks.sh
+
+ssh -l githire 10.0.0.2  "cd /home/githire/shell-scripting/docker && /usr/bin/sudo ./remount-disks.sh"
+
+/home/githire/shell-scripting/docker
+
+
+The Shawshank Redemption
+Good Will Hunting
+Forrest Gump
+Pulp Fiction
+American Beauty
+The Usual Suspects
+Eternal Sunshine of the Spotless Mind
+The Green Mile
+Requiem for a Dream
+Fight Club
+Memento
+The Pianist
+Schindlers List
+Confessions
+Inglourious Basterds
+Django Unchained
+Kill Bill: Vol. 1
+Gattaca
+Secretary
+Lars and the Real Girl
+In Bruges
+Blue Valentine
+Submarine
+The Talented Mr. Ripley
+An Education
+Big Fish
+Zindagi Na Milegi Dobara
+Barfi!
+The Departed
+Saving Private Ryan
+Gladiator
+Garden State
+Shutter Island
+Drive
+Being Flynn
+A Beautiful Mind
+Black Swan
+Inception
+Silver Linings Playbook
+A Clockwork Orange
+
+
+
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E01.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E02.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E03.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E04.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E05.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/August2019/This.is.Football.S01/WEBRip/This.Is.Football.S01E06.WEBRip.x264-ION10_www.Downloadha.com_.mp4
+
+
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E01.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E02.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E03.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E04.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E05.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E06.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
+
+
+https://githire\.text\@gmail.\com:hJi\/A\&ckH8e\/\?\+5@updates.opendns.com/nic/update?hostname=githire-trap
+https://githire.text%40gmail.com:Cyberlink450.@updates.opendns.com/nic/update?hostname=githire-trap
+https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+
+
+curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+
+
+curl --user githire.text@gmail.com:'Cyberlink450.' https://updates.opendns.com/nic/update\?hostname\=githire-trap
+
+### ssh
+permissions
+sudo chmod 700 ~/.ssh && sudo chmod 600 ~/.ssh/* && sudo chmod 644 -f ~/.ssh/*.pub ~/.ssh/authorized_keys ~/.ssh/known_hosts
+
+
+cat .zsh_history /media/8TB/centos-backup/.zsh_history | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}'
 
 #generate random password
 genpasswd() {

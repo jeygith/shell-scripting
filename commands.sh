@@ -58,6 +58,7 @@ wget -O "Yabamba" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/
 wget -O "The Double Trouble Mixxtape 2020 Volume 51 Amapiano Edition.mp4" https://player.vimeo.com/play/1940428201?s=443085198_1596456337_c2b7a9e2064f67301bb366ac0209702f&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 
 
+wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/1712873971?s=401144584_1599135300_1dffa5f5c5480c279315b6fafe0c10df&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
 E-sir - Jobless Corner 1 (Skit)
@@ -97,10 +98,17 @@ Gjy6srFUCkc_vIAsMn-auN_2
 
 
 # create virtual hosts
-sudo cp /etc/httpd/sites-available/varken.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo vim /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo ln -s /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/mqtt.githire-svr.dyn.jeffgithire.dev
+sudo cp /etc/httpd/sites-available/calibre.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf
+sudo vim /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf
+sudo ln -s /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/githire-svr.dyn.jeffgithire.dev.conf
+sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/githire-svr.dyn.jeffgithire.dev
 sudo systemctl restart httpd
 
 certbot --apache
+
+#generate random password
+genpasswd() {
+	local l=$1
+       	[ "$l" == "" ] && l=20
+      	tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}

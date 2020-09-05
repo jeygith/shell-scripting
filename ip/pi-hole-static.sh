@@ -5,7 +5,7 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Create static ip route at: ${DATE}"
 
-if route | grep -q "10.0.0.192"; then
+if route | grep "10.0.0.192"; then
   echo "pihole route exits"
 else
   ip link add foobar link enp2s0 type macvlan mode bridge && ip addr add 10.0.0.199/32 dev foobar && ip link set foobar up && ip route add 10.0.0.192/27 dev foobar
@@ -15,11 +15,4 @@ else
   else
     echo "Error creating static route"
   fi
-fi
-
-
-if route | grep -q "10.0.0.192"; then
-  echo "pihole route exits"
-else
-  echo "me"
 fi

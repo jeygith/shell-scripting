@@ -266,3 +266,5 @@ sudo chmod 700 ~/.ssh && sudo chmod 600 ~/.ssh/* && sudo chmod 644 -f ~/.ssh/*.p
 
 
 cat .zsh_history /media/8TB/centos-backup/.zsh_history | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}'
+
+ip link add foobar link enp2s0 type macvlan mode bridge && ip addr add 10.0.0.199/32 dev foobar && ip link set foobar up && ip route add 10.0.0.192/27 dev foobar

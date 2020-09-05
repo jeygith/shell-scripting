@@ -5,23 +5,17 @@ echo "Restart select containers at: ${DATE}"
 
 declare -a containers=(
   plex
-  librenms
   calibre
   calibre-web
   headphones
-  heimdall
   jackett
   lazylibrarian
   ombi
   radarr
   sonarr
   lidarr
-  spotify-docker-ripper
-  spotify-downloader
   tautulli
   transmission
-  ubooquity
-  varken
 )
 
 for container in "${containers[@]}"; do

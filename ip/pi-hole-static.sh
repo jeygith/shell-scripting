@@ -5,7 +5,7 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "Create static ip route at: ${DATE}"
 
-EXIST=$(ip route show 10.0.0.192/27 | wc -l)
+EXIST=$(/usr/sbin/ip route show 10.0.0.192/27 | wc -l)
 
 if [ $EXIST -eq 0 ]; then
   echo "pihole route does not exist"

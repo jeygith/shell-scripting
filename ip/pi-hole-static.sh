@@ -7,7 +7,7 @@ echo "Create static ip route at: ${DATE}"
 
 piholeroute=$(route | grep "10.0.0.192")
 
-if [ -z "$piholeroute" ]; then
+if $piholeroute; then
   echo "pihole route exits"
   exit 0
 else

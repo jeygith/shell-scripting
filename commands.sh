@@ -42,65 +42,7 @@ https://alexa.amazon.co.jp/api/skill/link/M2W4JJDHXI4FIN
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
 
 
-[{"id":"b74ada49.d7e408"
-"type":"server-state-changed"
-"z":"ffbd7f06.4a014"
-"name":""
-"version":1
-"exposeToHomeAssistant":false
-"haConfig":[{"property":"name"
-"value":""}
-{"property":"icon"
-"value":""}]
-"entityidfilter":"sun.sun"
-"entityidfiltertype":"exact"
-"outputinitially":false
-"state_type":"str"
-"haltifstate":"above_horizon"
-"halt_if_type":"str"
-"halt_if_compare":"is"
-"outputs":2
-"output_only_on_state_change":true
-"x":244
-"y":784
-"wires":[["1f467cbb.0c3983"]
-["da5ff3e0.cbb2a"]]}
-{"id":"1f467cbb.0c3983"
-"type":"api-call-service"
-"z":"ffbd7f06.4a014"
-"name":""
-"version":1
-"debugenabled":false
-"service_domain":"light"
-"service":"turn_off"
-"entityId":"light.front_porch"
-"data":""
-"dataType":"json"
-"mergecontext":""
-"output_location":""
-"output_location_type":"none"
-"mustacheAltTags":false
-"x":474
-"y":784
-"wires":[[]]}
-{"id":"da5ff3e0.cbb2a"
-"type":"api-call-service"
-"z":"ffbd7f06.4a014"
-"name":""
-"version":1
-"debugenabled":false
-"service_domain":"light"
-"service":"turn_on"
-"entityId":"light.front_porch"
-"data":""
-"dataType":"json"
-"mergecontext":""
-"output_location":""
-"output_location_type":"none"
-"mustacheAltTags":false
-"x":474
-"y":832
-"wires":[[]]}]
+[{"id":"b74ada49.d7e408","type":"server-state-changed","z":"ffbd7f06.4a014","name":"","version":1,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"entityidfilter":"sun.sun","entityidfiltertype":"exact","outputinitially":false,"state_type":"str","haltifstate":"above_horizon","halt_if_type":"str","halt_if_compare":"is","outputs":2,"output_only_on_state_change":true,"x":244,"y":784,"wires":[["1f467cbb.0c3983"],["da5ff3e0.cbb2a"]]},{"id":"1f467cbb.0c3983","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_off","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":784,"wires":[[]]},{"id":"da5ff3e0.cbb2a","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":832,"wires":[[]]}]
 
 
 wget -O "Boomba Train (feat Nameless).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1972501571_845906245_2003203290_comp_96.mp3
@@ -160,10 +102,10 @@ Gjy6srFUCkc_vIAsMn-auN_2
 
 
 # create virtual hosts
-sudo cp /etc/httpd/sites-available/calibre.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf
-sudo vim /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf
-sudo ln -s /etc/httpd/sites-available/githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/githire-svr.dyn.jeffgithire.dev.conf
-sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/githire-svr.dyn.jeffgithire.dev
+sudo cp /etc/httpd/sites-available/varken.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo vim /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo ln -s /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/mqtt.githire-svr.dyn.jeffgithire.dev.conf
+sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/mqtt.githire-svr.dyn.jeffgithire.dev
 sudo systemctl restart httpd
 
 certbot --apache
@@ -298,6 +240,8 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5NTliZThlYzdjOWQ0ZmU4OGY4NTgzNDF
 
 // nodered token
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
+
+ip link add foobar link enp2s0 type macvlan mode bridge && ip addr add 10.0.0.199/32 dev foobar && ip link set foobar up && ip route add 10.0.0.192/27 dev foobar
 
 
 Hi Evans. Trust you are well. Any update on the FutureStay engagement

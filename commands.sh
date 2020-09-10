@@ -42,7 +42,65 @@ https://alexa.amazon.co.jp/api/skill/link/M2W4JJDHXI4FIN
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
 
 
-[{"id":"b74ada49.d7e408","type":"server-state-changed","z":"ffbd7f06.4a014","name":"","version":1,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"entityidfilter":"sun.sun","entityidfiltertype":"exact","outputinitially":false,"state_type":"str","haltifstate":"above_horizon","halt_if_type":"str","halt_if_compare":"is","outputs":2,"output_only_on_state_change":true,"x":244,"y":784,"wires":[["1f467cbb.0c3983"],["da5ff3e0.cbb2a"]]},{"id":"1f467cbb.0c3983","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_off","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":784,"wires":[[]]},{"id":"da5ff3e0.cbb2a","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":832,"wires":[[]]}]
+[{"id":"b74ada49.d7e408"
+"type":"server-state-changed"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"exposeToHomeAssistant":false
+"haConfig":[{"property":"name"
+"value":""}
+{"property":"icon"
+"value":""}]
+"entityidfilter":"sun.sun"
+"entityidfiltertype":"exact"
+"outputinitially":false
+"state_type":"str"
+"haltifstate":"above_horizon"
+"halt_if_type":"str"
+"halt_if_compare":"is"
+"outputs":2
+"output_only_on_state_change":true
+"x":244
+"y":784
+"wires":[["1f467cbb.0c3983"]
+["da5ff3e0.cbb2a"]]}
+{"id":"1f467cbb.0c3983"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_off"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":784
+"wires":[[]]}
+{"id":"da5ff3e0.cbb2a"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_on"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":832
+"wires":[[]]}]
 
 
 wget -O "Boomba Train (feat Nameless).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1972501571_845906245_2003203290_comp_96.mp3
@@ -193,6 +251,19 @@ https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victo
 https://doc.downloadha.com/h/Documentaries/August2020/World.War.II.Race.To.Victory/1080p/World.War.II.Race.To.Victory.S01E06.1080p.WEB.h264-ROBOTS_www.Downloadha.com_.mkv
 
 
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E02.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E03.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E04.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E05.HDTV.x264-MiNDTHEGAP.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E06.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E07.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E08.HDTV.x264-MiNDTHEGAP.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E09.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E10.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/Nick.Cannon.Presents.Wild.N.Out.S06E11.HDTV.x264-W4F.mp4
+http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/nick.cannon.presents.wild.n.out.s06.comedy.special.chaunte.wayans.and.karlous.miller.hdtv.x264-w4f.mp4
+
+
 https://githire\.text\@gmail.\com:hJi\/A\&ckH8e\/\?\+5@updates.opendns.com/nic/update?hostname=githire-trap
 https://githire.text%40gmail.com:Cyberlink450.@updates.opendns.com/nic/update?hostname=githire-trap
 https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
@@ -208,7 +279,10 @@ permissions
 sudo chmod 700 ~/.ssh && sudo chmod 600 ~/.ssh/* && sudo chmod 644 -f ~/.ssh/*.pub ~/.ssh/authorized_keys ~/.ssh/known_hosts
 
 
-cat .zsh_history /media/8TB/centos-backup/.zsh_history | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/,date)) printf "%s", $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date',"\\\n"); print $0}'
+cat .zsh_history /media/8TB/centos-backup/.zsh_history | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{if (sub(/\\$/
+date)) printf "%s"
+ $0; else print $0}' | LC_ALL=C sort -u | awk -v date="WILL_NOT_APPEAR$(date +"%s")" '{gsub('date'
+ "\\\n"); print $0}'
 
 #generate random password
 genpasswd() {
@@ -223,5 +297,7 @@ genpasswd() {
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5NTliZThlYzdjOWQ0ZmU4OGY4NTgzNDFkNGFhZmI1YSIsImlhdCI6MTU5OTE1NDg0NSwiZXhwIjoxOTE0NTE0ODQ1fQ.CsLHoejYoQnp3FZxoA5yZS1v60ry6wvBcd9a5D4jViM
 
 // nodered token
-
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
+
+
+Hi Evans. Trust you are well. Any update on the FutureStay engagement

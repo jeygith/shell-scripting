@@ -15,3 +15,4 @@ fi
 if [ $EXIST -eq 1 ]; then
     echo "pihole route exits"
 fi
+

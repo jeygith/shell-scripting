@@ -102,14 +102,17 @@ Gjy6srFUCkc_vIAsMn-auN_2
 
 
 # create virtual hosts
-sudo cp /etc/httpd/sites-available/varken.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo vim /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo ln -s /etc/httpd/sites-available/mqtt.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/mqtt.githire-svr.dyn.jeffgithire.dev.conf
-sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/mqtt.githire-svr.dyn.jeffgithire.dev
+sudo cp /etc/httpd/sites-available/unms.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-available/rancher.githire-svr.dyn.jeffgithire.dev.conf
+sudo vim /etc/httpd/sites-available/rancher.githire-svr.dyn.jeffgithire.dev.conf
+sudo ln -s /etc/httpd/sites-available/rancher.githire-svr.dyn.jeffgithire.dev.conf /etc/httpd/sites-enabled/rancher.githire-svr.dyn.jeffgithire.dev.conf
+sudo cp -r /var/www/hass.githire-svr.dyn.jeffgithire.dev /var/www/rancher.githire-svr.dyn.jeffgithire.dev
 sudo systemctl restart httpd
 
 certbot --apache
 
+sudo cp /etc/httpd/sites-available/unms.githire-svr.dyn.jeffgithire.dev-le-ssl.conf /etc/httpd/sites-available/rancher.githire-svr.dyn.jeffgithire.dev-le-ssl.conf
+
+unms.githire-svr.dyn.jeffgithire.dev-le-ssl.conf
 
 
 5 3 * * * cd /home/githire/docker/librenms && /usr/local/bin/docker-compose down && /usr/local/bin/docker-compose up -d 2>&1 | /usr/bin/logger -t restart_librenms_330am
@@ -245,3 +248,6 @@ ip link add foobar link enp2s0 type macvlan mode bridge && ip addr add 10.0.0.19
 
 
 Hi Evans. Trust you are well. Any update on the FutureStay engagement
+
+
+docker rm -f $(docker ps -qa) && docker rmi -f $(docker images -q) && docker volume rm $(docker volume ls -q)

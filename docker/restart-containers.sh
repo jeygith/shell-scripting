@@ -16,6 +16,7 @@ declare -a containers=(
   pihole
   plex
   radarr
+  samba
   sonarr
   spotify-docker-ripper
   spotify-downloader

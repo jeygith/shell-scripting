@@ -251,3 +251,20 @@ Hi Evans. Trust you are well. Any update on the FutureStay engagement
 
 
 docker rm -f $(docker ps -qa) && docker rmi -f $(docker images -q) && docker volume rm $(docker volume ls -q)
+
+
+
+sudo docker run -d
+--privileged
+--restart=unless-stopped
+--net=host
+-v /etc/kubernetes:/etc/kubernetes
+-v /var/run:/var/run rancher/rancher-agent:v2.4.8
+--server https://10.0.0.2:5443
+--token wrwmc6t6lrx5xwwfkh6qnkvj44tlszcrdb2hpkp4q7lfjhmvwqmbtg
+--ca-checksum 5fbcfee77d02ffe1e6b03a55027e0c8aa33245dd8ec79ce7f4f3822fdf685521
+--etcd
+--controlplane
+--worker
+
+0664

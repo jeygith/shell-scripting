@@ -2,6 +2,8 @@
 
 dockerHome=/home/githire/docker/
 
+docker stop $(docker ps -aq)
+
 containers=($(ls ${dockerHome} -aq --ignore=".env" --ignore=".old*"  --ignore="appdata" --ignore=".*"));
 
 for container in "${containers[@]}"; do

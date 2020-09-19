@@ -1,7 +1,9 @@
 #!/bin/bash
 
-containers=$(ls -aq --ignore=".env" --ignore=".old*"  --ignore="appdata" --ignore=".*");
+dockerHome=/home/githire/docker
+
+containers=$(ls ${dockerHome} -aq --ignore=".env" --ignore=".old*"  --ignore="appdata" --ignore=".*");
 
 for container in "${containers[@]}"; do
-  cd "/home/githire/docker/${container}" && docker-compose down && docker-compose up -d
+  cd "${dockerHome}${container}" && docker-compose down && docker-compose up -d
 done

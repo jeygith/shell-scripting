@@ -8,4 +8,5 @@ containers=($(ls ${dockerHome} -aq --ignore=".env" --ignore=".old*"  --ignore="a
 
 for container in "${containers[@]}"; do
   cd "${dockerHome}${container}" && docker-compose down && docker-compose up -d
+   docker-compose up -d
 done

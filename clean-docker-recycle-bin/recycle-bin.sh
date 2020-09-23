@@ -23,7 +23,7 @@ for path in "${paths[@]}"; do
     echo ">>>>>>Files to delete>>>>>>>"
     echo""
     echo "${files[@]}" | tr ' ' '\n'
-    rm -rf "${files}"
+    find ${path} -mtime +7 -exec rm -rf {} \;
     echo ""
   fi
 

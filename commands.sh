@@ -354,3 +354,8 @@ youtube-dl -o LL Cool J/LL Cool J - Going Back to Cali --format bestvideo[ext=mp
 
 
 youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=oitrWB8J2IY
+
+
+
+
+* * * * * /home/githire/shell-scripting/docker/restart-containers-cron.sh 2>&1 >> /home/githire/logs/restart-containers-cron.log

@@ -20,4 +20,5 @@ else
     echo "Error remounting and restarting containers"
     exit 1
   fi
+
 fi

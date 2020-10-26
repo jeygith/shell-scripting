@@ -12,7 +12,7 @@ if [ $? -eq 0 ]; then
   exit 0
 else
   # remount disks and restart select containers
-  sudo /usr/bin/umount -l /media/* && sudo /usr/bin/systemctl restart autofs && cd /home/githire/shell-scripting/docker && ./restart-containers.sh
+  sudo /usr/bin/umount -l /media/* && sudo /usr/bin/systemctl restart autofs && sudo /usr/bin/systemctl restart docker
   if [ $? -eq 0 ]; then
     echo "Remount and container restart OK"
     exit 0

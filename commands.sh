@@ -10,6 +10,8 @@ spotify-ripper music/playlists/"Lucky you.txt" -u githireh@gmail.com --flac -u g
 
 spotify-ripper music/playlists/"indie"
 spotify-ripper music/playlists/"on fire"
+spotify-ripper music/playlists/"my-playlist"
+
 
 spotify-ripper music/playlists/"streetbullies.txt"  -f "{artist} - {track_name}.{ext}" --directory "/media/2TB/software/spotify-ripper/music/riddim/Street Bullies Riddim"
 
@@ -26,6 +28,9 @@ docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader
 docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/5HEd4NldckiTSWPjqSAgQA
 
 docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/3HoHpqSqydMwuZioJJEgby
+
+docker run --rm -it -v $(pwd)/"music/playlists":/music ritiek/spotify-downloader -p https://open.spotify.com/playlist/6lP679uTueNp3UhHme1BZt
+
 amzn1.ask.skill.ad68809b-9bf1-4531-a25f-f0cf77497a3a
 
 arn:aws:lambda:us-east-1:322926178723:function:haaska
@@ -42,7 +47,65 @@ https://alexa.amazon.co.jp/api/skill/link/M2W4JJDHXI4FIN
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMmU2NDJjOTQ3MmY0MTM3YTE5ZDBlZDEwZGQwNzEzNyIsImlhdCI6MTU5NTUzMTE2NSwiZXhwIjoxOTEwODkxMTY1fQ.mTgI895WbsTOOhO4EEqyzdnjFh9dQFJPBzhz2xI0RQk
 
 
-[{"id":"b74ada49.d7e408","type":"server-state-changed","z":"ffbd7f06.4a014","name":"","version":1,"exposeToHomeAssistant":false,"haConfig":[{"property":"name","value":""},{"property":"icon","value":""}],"entityidfilter":"sun.sun","entityidfiltertype":"exact","outputinitially":false,"state_type":"str","haltifstate":"above_horizon","halt_if_type":"str","halt_if_compare":"is","outputs":2,"output_only_on_state_change":true,"x":244,"y":784,"wires":[["1f467cbb.0c3983"],["da5ff3e0.cbb2a"]]},{"id":"1f467cbb.0c3983","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_off","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":784,"wires":[[]]},{"id":"da5ff3e0.cbb2a","type":"api-call-service","z":"ffbd7f06.4a014","name":"","version":1,"debugenabled":false,"service_domain":"light","service":"turn_on","entityId":"light.front_porch","data":"","dataType":"json","mergecontext":"","output_location":"","output_location_type":"none","mustacheAltTags":false,"x":474,"y":832,"wires":[[]]}]
+[{"id":"b74ada49.d7e408"
+"type":"server-state-changed"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"exposeToHomeAssistant":false
+"haConfig":[{"property":"name"
+"value":""}
+{"property":"icon"
+"value":""}]
+"entityidfilter":"sun.sun"
+"entityidfiltertype":"exact"
+"outputinitially":false
+"state_type":"str"
+"haltifstate":"above_horizon"
+"halt_if_type":"str"
+"halt_if_compare":"is"
+"outputs":2
+"output_only_on_state_change":true
+"x":244
+"y":784
+"wires":[["1f467cbb.0c3983"]
+["da5ff3e0.cbb2a"]]}
+{"id":"1f467cbb.0c3983"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_off"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":784
+"wires":[[]]}
+{"id":"da5ff3e0.cbb2a"
+"type":"api-call-service"
+"z":"ffbd7f06.4a014"
+"name":""
+"version":1
+"debugenabled":false
+"service_domain":"light"
+"service":"turn_on"
+"entityId":"light.front_porch"
+"data":""
+"dataType":"json"
+"mergecontext":""
+"output_location":""
+"output_location_type":"none"
+"mustacheAltTags":false
+"x":474
+"y":832
+"wires":[[]]}]
 
 
 wget -O "Boomba Train (feat Nameless).mp3" https://s3.eu-central-1.amazonaws.com/content.smubuafrica.com/uploads/tracks/1972501571_845906245_2003203290_comp_96.mp3
@@ -62,8 +125,10 @@ wget -O "Dj Protege - Madaraka Day Throwback Quarantine Mix (PVE Vol 47).mp4" ht
 wget -O "Dj Protege - Funky Disco part 1 (PVE vol 49).mp4" https://player.vimeo.com/play/1953368266?s=445507330_1596800319_8bbca4a491c1c0a29b521f36150706f7&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/1712873971?s=401144584_1599135300_1dffa5f5c5480c279315b6fafe0c10df&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
+wget -O "The Double Trouble Mixxtape 2020 Volume 52 Street Vybez Edition.mp4" https://player.vimeo.com/play/2002871257?s=454458024_1601312526_a3cd2bd999947f2cf3665b2f46a28998&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2087707174?s=469489556_1603102995_9cea32fadcef32693d25ef6aad73cdd6&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
+cd /media/2TB/videomixx && wget -O "Dj Protege - King of the dancehall PVE Vol 50 part 2" https://player.vimeo.com/play/2016496237?s=456891137_1601477277_cafabd565504f5dac7b9426c002a9d7b&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -269,6 +334,32 @@ sudo docker run -d
 --worker
 
 0664
+
+
+https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E02.McLaren.Supercar.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E03.NASAs.Michoud.Facility.Swiss.Army.Knife.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
+https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
+
+
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
+
+
+
+youtube-dl -o "test - video" mkv --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=g2N0TkfrQhY
+
+
+
+		echo "${cookies} -o "$destination/$sanatizedartistname - ${sanitizevideotitle}${sanitizedvideodisambiguation}" ${videoformat} --write-sub --sub-lang $subtitlelanguage --embed-subs --merge-output-format mkv --no-mtime --geo-bypass "$youtubeurl""
+
+youtube-dl -o LL Cool J/LL Cool J - Going Back to Cali --format bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=FdizL4on-Rc
+
+
+youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=oitrWB8J2IY
+
+
+
+
+* * * * * /home/githire/shell-scripting/docker/restart-containers-cron.sh 2>&1 >> /home/githire/logs/restart-containers-cron.log
 
 
 

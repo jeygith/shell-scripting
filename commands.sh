@@ -62,6 +62,7 @@ wget -O "Dj Protege - Madaraka Day Throwback Quarantine Mix (PVE Vol 47).mp4" ht
 wget -O "Dj Protege - Funky Disco part 1 (PVE vol 49).mp4" https://player.vimeo.com/play/1953368266?s=445507330_1596800319_8bbca4a491c1c0a29b521f36150706f7&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/1712873971?s=401144584_1599135300_1dffa5f5c5480c279315b6fafe0c10df&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
+wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2087707174?s=469489556_1603102995_9cea32fadcef32693d25ef6aad73cdd6&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
@@ -268,3 +269,118 @@ sudo docker run -d
 --worker
 
 0664
+
+
+
+for a in *.mp3; do
+  f="${a[@]/%mp3/flac}"
+  ffmpeg -i "$a" -qscale:a 0 "$f"
+done
+
+
+// convert mp3 to flac
+
+for f in *.mp3;
+do
+echo "Processing $f"
+ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+done && rm -rf *.mp3
+
+
+for f in *.m4a;
+do
+echo "Processing $f"
+ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+done && rm -rf *.m4a
+
+dirs=($(ls -aq));
+
+for dir in "${dirs[@]}"; do
+  echo "${dir}"
+  # cd "${dir}" && ls -la
+done
+
+parent=$(pwd)
+find . -maxdepth 1 -mindepth 1 -type d -printf '%P\n' | while read dir; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+done
+
+parent=$(pwd)
+find . -maxdepth 2 -mindepth 1 -type d  -printf '%P\n'| while read dir; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+
+  if [ $? -eq 0 ]; then
+    echo "found mp3s"
+    for f in *.mp3; do
+      echo "Processing $f"
+      ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+    done && rm -rf *.mp3
+  else
+    cd "${parent}/${dir}" && ls -la *.m4a
+    if [ $? -eq 0 ]; then
+      echo "found m4as"
+      for f in *.m4a; do
+        echo "Processing $f"
+        ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+      done && rm -rf *.m4a
+    else
+      ls -la *.m4a
+      echo "Error finding m4as"
+    fi
+    echo "Error finding mp3s"
+  fi
+done && cd "${parent}"
+
+
+
+// convert to flac
+
+parent=$(pwd)
+
+for dir in */; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+
+  if [ $? -eq 0 ]; then
+    echo "found mp3s"
+    for f in *.mp3; do
+      echo "Processing $f"
+      ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+    done && rm -rf *.mp3
+  else
+    cd "${parent}/${dir}" && ls -la *.m4a
+    if [ $? -eq 0 ]; then
+      echo "found m4as"
+      for f in *.m4a; do
+        echo "Processing $f"
+        ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+      done && rm -rf *.m4a
+    else
+      ls -la *.m4a
+      echo "Error finding m4as"
+    fi
+    echo "Error finding mp3s"
+  fi
+done
+
+cd "${parent}"
+
+
+
+
+youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(title)s.%(ext)s" https://www.youtube.com/watch?v=Goc1bBFG41A&list=PLK9R8P1ev0VKHuTFVjHOHFSEg1e6z_vYM
+
+
+// plex-api
+
+-from plexapi.myplex import MyPlexAccount
+-account = MyPlexAccount('githireh@gmail.com', 'sE8g6b.XY!iUmpJ')
+-plex = account.resource('githire-svr').connect()
+-
+-
+-movies = plex.library.section('Movies')
+-for video in movies.search(unwatched=True):
+-    print(video.title)
+(END)

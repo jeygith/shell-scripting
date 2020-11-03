@@ -128,7 +128,8 @@ wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/
 wget -O "The Double Trouble Mixxtape 2020 Volume 52 Street Vybez Edition.mp4" https://player.vimeo.com/play/2002871257?s=454458024_1601312526_a3cd2bd999947f2cf3665b2f46a28998&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2087707174?s=469489556_1603102995_9cea32fadcef32693d25ef6aad73cdd6&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
-cd /media/2TB/videomixx && wget -O "Dj Protege - King of the dancehall PVE Vol 50 part 2" https://player.vimeo.com/play/2016496237?s=456891137_1601477277_cafabd565504f5dac7b9426c002a9d7b&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "DJ Tophaz Vs DJ Kym Nickdee - Double Finesse Vol 01(Danceholic Heights).mp4" https://player.vimeo.com/play/2016581941?s=456881296_1603971891_819d12a5723248fd60703e2aacbf4313&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -475,3 +476,6 @@ youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(title)s.%(ext)s
 -for video in movies.search(unwatched=True):
 -    print(video.title)
 (END)
+
+
+0 0 * * * /usr/bin/docker system prune -a --volumes -f  >> /home/githire/logs/prune.log

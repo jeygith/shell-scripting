@@ -126,9 +126,12 @@ wget -O "Dj Protege - Funky Disco part 1 (PVE vol 49).mp4" https://player.vimeo.
 wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/1712873971?s=401144584_1599135300_1dffa5f5c5480c279315b6fafe0c10df&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 wget -O "The Double Trouble Mixxtape 2020 Volume 52 Street Vybez Edition.mp4" https://player.vimeo.com/play/2002871257?s=454458024_1601312526_a3cd2bd999947f2cf3665b2f46a28998&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2087707174?s=469489556_1603102995_9cea32fadcef32693d25ef6aad73cdd6&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride (PVE Vol 51).mp4" https://player.vimeo.com/play/2123479487?s=475785826_1604582727_91f2c9e3d7380c53d03b26108178e1cc&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
+
+cd /media/2TB/videomixx && wget -O "DJ Tophaz Vs DJ Kym Nickdee - Double Finesse Vol 01(Danceholic Heights).mp4" https://player.vimeo.com/play/2016581941?s=456881296_1603971891_819d12a5723248fd60703e2aacbf4313&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
@@ -366,3 +369,121 @@ youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ex
 // ch media permissions
 cd /media && find  -type d ! -perm 755 -exec chmod 755 {} \; &
 cd /media && find  -type f ! -perm 0644 -exec chmod 0644 {} \; &
+
+
+
+for a in *.mp3; do
+  f="${a[@]/%mp3/flac}"
+  ffmpeg -i "$a" -qscale:a 0 "$f"
+done
+
+
+// convert mp3 to flac
+
+for f in *.mp3;
+do
+echo "Processing $f"
+ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+done && rm -rf *.mp3
+
+
+for f in *.m4a;
+do
+echo "Processing $f"
+ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+done && rm -rf *.m4a
+
+dirs=($(ls -aq));
+
+for dir in "${dirs[@]}"; do
+  echo "${dir}"
+  # cd "${dir}" && ls -la
+done
+
+parent=$(pwd)
+find . -maxdepth 1 -mindepth 1 -type d -printf '%P\n' | while read dir; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+done
+
+parent=$(pwd)
+find . -maxdepth 2 -mindepth 1 -type d  -printf '%P\n'| while read dir; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+
+  if [ $? -eq 0 ]; then
+    echo "found mp3s"
+    for f in *.mp3; do
+      echo "Processing $f"
+      ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+    done && rm -rf *.mp3
+  else
+    cd "${parent}/${dir}" && ls -la *.m4a
+    if [ $? -eq 0 ]; then
+      echo "found m4as"
+      for f in *.m4a; do
+        echo "Processing $f"
+        ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+      done && rm -rf *.m4a
+    else
+      ls -la *.m4a
+      echo "Error finding m4as"
+    fi
+    echo "Error finding mp3s"
+  fi
+done && cd "${parent}"
+
+
+
+// convert to flac
+
+parent=$(pwd)
+
+for dir in */; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mp3
+
+  if [ $? -eq 0 ]; then
+    echo "found mp3s"
+    for f in *.mp3; do
+      echo "Processing $f"
+      ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.mp3}.flac"
+    done && rm -rf *.mp3
+  else
+    cd "${parent}/${dir}" && ls -la *.m4a
+    if [ $? -eq 0 ]; then
+      echo "found m4as"
+      for f in *.m4a; do
+        echo "Processing $f"
+        ffmpeg -i "$f" -sample_fmt s16 -ar 48000 "${f%.m4a}.flac"
+      done && rm -rf *.m4a
+    else
+      ls -la *.m4a
+      echo "Error finding m4as"
+    fi
+    echo "Error finding mp3s"
+  fi
+done
+
+cd "${parent}"
+
+
+
+
+youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(title)s.%(ext)s" https://www.youtube.com/watch?v=Goc1bBFG41A&list=PLK9R8P1ev0VKHuTFVjHOHFSEg1e6z_vYM
+
+
+// plex-api
+
+-from plexapi.myplex import MyPlexAccount
+-account = MyPlexAccount('githireh@gmail.com', 'sE8g6b.XY!iUmpJ')
+-plex = account.resource('githire-svr').connect()
+-
+-
+-movies = plex.library.section('Movies')
+-for video in movies.search(unwatched=True):
+-    print(video.title)
+(END)
+
+
+0 0 * * * /usr/bin/docker system prune -a --volumes -f  >> /home/githire/logs/prune.log

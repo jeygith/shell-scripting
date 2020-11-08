@@ -35,7 +35,7 @@ if [[ $wanip4 =~ $ip4 ]] && [[ $currentIP =~ $ip4 ]] && [[ "$wanip4" != "$curren
     couchpotato jackett radarr lidarr unms lazylibrarian
     ombi heimdall calibre calibre-web preview hass nodered erx router
     librenms varken mqtt openvpn rancher codeserver cockpit grocy
-    healthchecks wireshark sqlitebrowser diskover
+    healthchecks wireshark sqlitebrowser diskover nanom5
   )
 
   for domain in "${domains[@]}"; do

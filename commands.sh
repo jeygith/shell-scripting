@@ -127,7 +127,9 @@ wget -O "DJ Kym NickDee - Africa Rise Vol 07.mp4" https://player.vimeo.com/play/
 
 wget -O "The Double Trouble Mixxtape 2020 Volume 52 Street Vybez Edition.mp4" https://player.vimeo.com/play/2002871257?s=454458024_1601312526_a3cd2bd999947f2cf3665b2f46a28998&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
-cd /media/2TB/videomixx && wget -O "Dj Protege - King of the dancehall PVE Vol 50 part 2" https://player.vimeo.com/play/2016496237?s=456891137_1601477277_cafabd565504f5dac7b9426c002a9d7b&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride (PVE Vol 51).mp4" https://player.vimeo.com/play/2123479487?s=475785826_1604582727_91f2c9e3d7380c53d03b26108178e1cc&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+
+
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -359,3 +361,8 @@ youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ex
 
 
 * * * * * /home/githire/shell-scripting/docker/restart-containers-cron.sh 2>&1 >> /home/githire/logs/restart-containers-cron.log
+
+
+// ch media permissions
+cd /media && find  -type d ! -perm 755 -exec chmod 755 {} \; &
+cd /media && find  -type f ! -perm 0644 -exec chmod 0644 {} \; &

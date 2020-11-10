@@ -479,3 +479,9 @@ youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(title)s.%(ext)s
 
 
 0 0 * * * /usr/bin/docker system prune -a --volumes -f  >> /home/githire/logs/prune.log
+
+
+declare currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4)
+
+
+currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4) && curl -fsS -m 10 --retry 5 -o /dev/null https://healthchecks.githire-svr.dyn.jeffgithire.dev/ping/52dcb75a-8570-4bb5-b934-88620cdb5f6c

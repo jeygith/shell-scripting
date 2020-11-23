@@ -281,10 +281,10 @@ http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/nick.cannon.p
 
 https://githire\.text\@gmail.\com:hJi\/A\&ckH8e\/\?\+5@updates.opendns.com/nic/update?hostname=githire-trap
 https://githire.text%40gmail.com:Cyberlink450.@updates.opendns.com/nic/update?hostname=githire-trap
-https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.156.45.251&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
 
 
-curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.156.45.251&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
 
 
 curl --user githire.text@gmail.com:'Cyberlink450.' https://updates.opendns.com/nic/update\?hostname\=githire-trap

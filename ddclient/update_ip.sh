@@ -5,9 +5,12 @@
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 echo "IP update at: ${DATE}"
 
-declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
+#declare wanip4=$(dig @resolver1.opendns.com A myip.opendns.com +short -4)
 
-declare currentIP=$(dig @ns.jeffgithire.dev A plex.githire-svr.dyn.jeffgithire.dev +short -4)
+declare wanip4=$(curl ifconfig.co)
+
+
+declare currentIP=$(dig @8.8.8.8 A plex.githire-svr.dyn.jeffgithire.dev +short -4)
 
 # ipv4 address octet
 octet="(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])"

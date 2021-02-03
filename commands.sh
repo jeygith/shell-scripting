@@ -131,7 +131,8 @@ wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2
 cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride (PVE Vol 51).mp4" https://player.vimeo.com/play/2123479487?s=475785826_1604582727_91f2c9e3d7380c53d03b26108178e1cc&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
-cd /media/2TB/videomixx && wget -O "DJ Kym NickDee - Africa Rise Vol 08.mp4" https://player.vimeo.com/play/2317540106?s=505647103_1611994763_0448ccf8e46ffb6a91726fe179b09366&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "The Double Trouble Mixxtape 2020 Volume 55 2020 Bangers Edition.mp4" https://player.vimeo.com/play/2182597955?s=486998176_1608271990_4a8c6e92f42c15cf2ce651dbc892099a&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -280,10 +281,10 @@ http://149.56.24.140/tv%20shows/Nick%20Cannon/wild%20n%20out%20s06/nick.cannon.p
 
 https://githire\.text\@gmail.\com:hJi\/A\&ckH8e\/\?\+5@updates.opendns.com/nic/update?hostname=githire-trap
 https://githire.text%40gmail.com:Cyberlink450.@updates.opendns.com/nic/update?hostname=githire-trap
-https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+https://githire.text%40gmail.com:Cyberlink450.@updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.156.45.251&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
 
 
-curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.153.53.149&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
+curl --user githire.text@gmail.com:'hJi/A&ckH8e/?+5' https://updates.dnsomatic.com/nic/update?hostname=githire-trap&myip=154.156.45.251&wildcard=NOCHG&mx=NOCHG&backmx=NOCHG
 
 
 curl --user githire.text@gmail.com:'Cyberlink450.' https://updates.opendns.com/nic/update\?hostname\=githire-trap
@@ -344,9 +345,9 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/7/tnr79t37k0i26n/bbc.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/9/hiqlddjoh30c5f/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/5/i2lltat5m8a3vk/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
 
 
 youtube-dl -o "test - video" mkv --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=g2N0TkfrQhY
@@ -509,3 +510,53 @@ done
 0 0 * * * /home/githire/shell-scripting/docker/start-containers.sh && /usr/bin/docker system prune -a --volumes -f >> /home/githire/logs/prune.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/2ca5e2a7-1fb9-424a-9f5a-3e3b90ffdd43
 
 0 0 * * * /home/githire/shell-scripting/docker/docker-prune.sh >> /home/githire/logs/prune.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/2ca5e2a7-1fb9-424a-9f5a-3e3b90ffdd43
+
+
+
+
+// erx crontab
+* * * * *	cd /home/githire/shell-scripting/snmp && ./snmp.sh 2>&1 | /usr/bin/logger -t custom_snmp
+
+* * * * *	cd /home/githire/shell-scripting/cleanup && ./cleanup.sh 2>&1 | /usr/bin/logger -t log_cleanup
+
+*/5 * * * *	cd /home/githire/shell-scripting/cleanup && ./clean-logs.sh 2>&1 | /usr/bin/logger -t log_cleanup_5min
+
+
+
+for f in *.mkv;
+do
+echo "Processing $f"
+done
+
+
+parent=$(pwd)
+find . -maxdepth 1 -mindepth 1 -type d -printf '%P\n' | while read dir; do
+  echo "$dir"
+  cd "${parent}/${dir}" && ls -la *.mkv
+done
+
+
+
+ffmpeg -i input.mov -preset slow -codec:a libfdk_aac -b:a 128k -codec:v libx264 -pix_fmt yuv420p -b:v 4500k -minrate 4500k -maxrate 9000k -bufsize 9000k -vf scale=-1:1080 output.mp4
+
+
+
+
+ffmpeg -i Musicmatters\ Yearmix\ 2020.mp4 -c:v copy -c:a flac output.mkv
+
+ffmpeg -i Musicmatters\ Yearmix\ 2020.mp4 -c:v copy -c:a  output.mkv
+
+// convert mkv to mp4
+cd /media/8TB/tvshows/The\ Office\ \(US\)/Season\ 1 &&
+
+for f in *.mkv;
+do
+echo "Processing $f"
+ffmpeg -i "$f" -c:v copy -c:a copy "${f%.mkv}.mp4"
+done && rm -rf *.mkv
+
+ffmpeg -i The\ Office\ \(US\)\ -\ 02x03\ -\ Office\ Olympics.mkv -c:v copy -c:a copy The\ Office\ \(US\)\ -\ 02x03\ -\ Office\ Olympics.mp4
+
+
+// snmp script mac after update
+scp githire-svr:/home/githire/snmp/mac/snmpd.conf /tmp/ && sudo cp /tmp/snmpd.conf /etc/snmp && sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && snmpwalk -v2c -c Udm22cm7sSW8bUUPNXkL localhost

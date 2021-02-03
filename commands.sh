@@ -131,8 +131,7 @@ wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2
 cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride (PVE Vol 51).mp4" https://player.vimeo.com/play/2123479487?s=475785826_1604582727_91f2c9e3d7380c53d03b26108178e1cc&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
-cd /media/2TB/videomixx && wget -O "DJ Tophaz Vs DJ Kym Nickdee - Double Finesse Vol 01(Danceholic Heights).mp4" https://player.vimeo.com/play/2016581941?s=456881296_1603971891_819d12a5723248fd60703e2aacbf4313&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
-
+cd /media/2TB/videomixx && wget -O "DJ Kym NickDee - Africa Rise Vol 08.mp4" https://player.vimeo.com/play/2317540106?s=505647103_1611994763_0448ccf8e46ffb6a91726fe179b09366&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -345,9 +344,9 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/9/hiqlddjoh30c5f/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/7/tnr79t37k0i26n/bbc.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/5/i2lltat5m8a3vk/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
 
 
 youtube-dl -o "test - video" mkv --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=g2N0TkfrQhY

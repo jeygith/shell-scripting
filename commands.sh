@@ -556,3 +556,6 @@ ffmpeg -i "$f" -c:v copy -c:a copy "${f%.mkv}.mp4"
 done && rm -rf *.mkv
 
 ffmpeg -i The\ Office\ \(US\)\ -\ 02x03\ -\ Office\ Olympics.mkv -c:v copy -c:a copy The\ Office\ \(US\)\ -\ 02x03\ -\ Office\ Olympics.mp4
+
+
+scp githire-svr:/home/githire/snmp/mac/snmpd.conf /tmp/ && sudo cp /tmp/snmpd.conf /etc/snmp && sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && snmpwalk -v2c -c Udm22cm7sSW8bUUPNXkL localhost

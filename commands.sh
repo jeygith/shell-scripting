@@ -345,7 +345,11 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/8/rrsqeg01fhec40/motd.mp4 &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/9/hiqlddjoh30c5f/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
+
+
 youtube-dl -o "test - video" mkv --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=g2N0TkfrQhY
 
 
@@ -484,6 +488,28 @@ youtube-dl --extract-audio --audio-format mp3 -o "%(playlist)s/%(title)s.%(ext)s
 
 
 0 0 * * * /usr/bin/docker system prune -a --volumes -f  >> /home/githire/logs/prune.log
+
+
+declare currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4)
+
+
+currentIP=$(dig @ns.jeffgithire.dev A githire-svr.dyn.jeffgithire.dev +short -4) && curl -fsS -m 10 --retry 5 -o /dev/null https://healthchecks.githire-svr.dyn.jeffgithire.dev/ping/52dcb75a-8570-4bb5-b934-88620cdb5f6c
+
+
+
+
+parent=$(pwd)
+find . -maxdepth 1 -mindepth 1 -type d -printf '%P\n' | while read dir; do
+  echo "$dir"\n cd "${parent}/${dir}" && ls -la *.mkv
+done
+
+
+*/5 * * * * /home/githire/shell-scripting/docker/remount-disks-cron.sh 2>&1 >> /home/githire/logs/remount-disks-cron.log && curl -fsS -m 10 --retry 5 -o /dev/null https://healthchecks.githire-svr.dyn.jeffgithire.dev/ping/0ca9c349-4d3a-4e1a-b531-4707d6eb7885
+
+
+0 0 * * * /home/githire/shell-scripting/docker/start-containers.sh && /usr/bin/docker system prune -a --volumes -f >> /home/githire/logs/prune.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/2ca5e2a7-1fb9-424a-9f5a-3e3b90ffdd43
+
+0 0 * * * /home/githire/shell-scripting/docker/docker-prune.sh >> /home/githire/logs/prune.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/2ca5e2a7-1fb9-424a-9f5a-3e3b90ffdd43
 
 
 

@@ -595,3 +595,8 @@ links.toString();
 
 
 wget -i links &  && tail -f wget.log && rm -rf links
+
+
+https://api.trakt.tv/shows/played
+
+https://api.trakt.tv/sync/history

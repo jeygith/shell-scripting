@@ -345,9 +345,10 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/9/hiqlddjoh30c5f/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/1/6w3d2wcb2k6b4v/motd%20-%20fms.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/1/cjwcjafrzuqfqh/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+
 
 
 youtube-dl -o "test - video" mkv --write-sub --sub-lang en --embed-subs --merge-output-format mkv --no-mtime --geo-bypass https://www.youtube.com/watch?v=g2N0TkfrQhY
@@ -560,3 +561,37 @@ ffmpeg -i The\ Office\ \(US\)\ -\ 02x03\ -\ Office\ Olympics.mkv -c:v copy -c:a 
 
 // snmp script mac after update
 scp githire-svr:/home/githire/snmp/mac/snmpd.conf /tmp/ && sudo cp /tmp/snmpd.conf /etc/snmp && sudo launchctl unload /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist && snmpwalk -v2c -c Udm22cm7sSW8bUUPNXkL localhost
+
+
+// swapon 2G
+sudo touch swap.img && sudo chmod 600 swap.img && sudo dd if=/dev/zero of=swap.img bs=2048k count=1000 && sudo mkswap swap.img && sudo swapon swap.img
+
+
+certbot certonly --manual --manual-auth-hook /config/acme-dns-auth.py --preferred-challenges dns --debug-challenges -d \*.githire-svr.dyn.jeffgithire.dev -d githire-svr.dyn.jeffgithire.dev --dry-run
+
+
+_acme-challenge.githire-svr.dyn.jeffgithire.dev ee81ff40-e517-4ea8-8ad3-691ca80a20ee.auth.acme-dns.io.
+
+_acme-challenge.githire-svr.dyn.jeffgithire.dev IN           TXT        ee81ff40-e517-4ea8-8ad3-691ca80a20ee.auth.acme-dns.io.
+_validation-contactemail      IN           TXT         email address
+
+_acme-challenge         TXT        ee81ff40-e517-4ea8-8ad3-691ca80a20ee.auth.acme-dns.io.
+
+e88f1650-c35b-4687-88ef-cb4d1db15696.auth.acme-dns.io.
+e7a4e30c-baf4-4958-9195-36d9b8f7d158.auth.acme-dns.io.
+
+
+### get links for wget from browser page
+links = [];
+let collection = document.getElementsByTagName("a");
+children = [...collection];
+children.forEach(child=>links.push(child.href));
+links.toString();
+
+
+links = [];
+collection = [...document.getElementsByTagName("a")].forEach(child=>links.push(child.href));
+links.toString();
+
+
+wget -i links &  && tail -f wget.log && rm -rf links

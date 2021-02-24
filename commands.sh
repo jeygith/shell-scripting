@@ -347,7 +347,7 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 
 cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/1/ja8qzlcfyi20bg/motd%202%20-%201080p.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/6/w5cw5xxovuzlcj/motd%20-%20www.fullmatchesandshows.com.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/1/q3bcyopzif8s6s/motd%20-%20fms.mp4 && tail -f wget-log && rm -rf wget-log* &
 
 cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://s4.filescdn.co/dcpxkbfttju4iw4yi5njc7hkvhsj4doxrccjwpp6mcohy4hkdzqmjn4gobzq/motd_2.mp4 &
 

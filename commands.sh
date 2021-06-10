@@ -131,8 +131,12 @@ wget -O "A Case of Amapiano with Dj Protege.mp4" https://player.vimeo.com/play/2
 cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride (PVE Vol 51).mp4" https://player.vimeo.com/play/2123479487?s=475785826_1604582727_91f2c9e3d7380c53d03b26108178e1cc&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
 
-cd /media/2TB/videomixx && wget -O "The Double Trouble Mixxtape 2020 Volume 55 2020 Bangers Edition.mp4" https://player.vimeo.com/play/2182597955?s=486998176_1608271990_4a8c6e92f42c15cf2ce651dbc892099a&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "Dj Protege - The Beat of 2020 (PVE Vol 52 part 2).mp4" https://player.vimeo.com/play/2392774220?s=515597904_1617188795_97852de310f290addfd974c7553030c4&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "Dj Protege - Beat of 2020 Part 1 (PVE Vol 52).mp4" https://player.vimeo.com/play/2341182005?s=508701852_1617188860_b16efade9421932521998b32a5d9ab7c&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
+cd /media/2TB/videomixx && wget -O "Dj Protege - The East African Ride 2nd Edition.mp4" https://player.vimeo.com/play/2169031659?s=484327670_1617188937_10764b2e9322890bba298dc5edb9aa03&loc=external&context=Vimeo%5CController%5CClipController.main&download=1 &
 
+
+https://player.vimeo.com/play/2341182005?s=508701852_1617188860_b16efade9421932521998b32a5d9ab7c&loc=external&context=Vimeo%5CController%5CClipController.main&download=1
 E-sir - Jobless Corner 1 (Skit)
 E-sir - Kamata (Ft. Mr. Lenny)
 E-sir - Bamba (Ft. Big Pin & K-Rupt)
@@ -345,9 +349,9 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/1/6w3d2wcb2k6b4v/motd%20-%20fms.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/0/ki94tx7136gjp9/motd%20-%20fms.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/1/cjwcjafrzuqfqh/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/7/asx843ubjwfpcz/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
 
 
 
@@ -600,3 +604,20 @@ wget -i links &  && tail -f wget.log && rm -rf links
 https://api.trakt.tv/shows/played
 
 https://api.trakt.tv/sync/history
+
+// delete unms db
+ sudo docker-compose -p unms -f ~unms/app/docker-compose.yml down && cd /home/unms/data/siridb && sudo rm -rf unms &&  sudo docker-compose -p unms -f ~unms/app/docker-compose.yml up -d
+
+
+// create mac user
+sudo dscl . -create /Users/betty
+sudo dscl . -create /Users/betty UserShell /bin/zsh
+sudo dscl . -create /Users/betty RealName "Betty Mwaura"
+sudo dscl . -create /Users/betty UniqueID 502
+sudo dscl . -create /Users/betty PrimaryGroupID 20
+sudo dscl . -create /Users/betty NFSHomeDirectory /Local/Users/betty
+sudo dscl . -passwd /Users/betty 12345
+
+
+
+

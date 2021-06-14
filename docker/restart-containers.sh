@@ -14,4 +14,5 @@ done
 cd "${dockerHome}nodered" && docker-compose down && docker-compose up -d
 cd "${dockerHome}mosquitto" && docker-compose down && docker-compose up -d
 
-docker-compose -p unms -f ~unms/app/docker-compose.yml up -d
+## exclude unms
+#docker-compose -p unms -f ~unms/app/docker-compose.yml up -d

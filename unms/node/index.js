@@ -2,6 +2,7 @@ var axios = require('axios');
 var qs = require('qs');
 const dotenv = require('dotenv')
 
+console.log("UNMS vault upload script run at : ", Date(), "\n");
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config({ path: __dirname + '/.env' })
 }

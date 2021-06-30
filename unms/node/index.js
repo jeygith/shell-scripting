@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 var UNMS_URL = process.env.UNMS_URL;
 var UNMS_USERNAME = process.env.UNMS_USERNAME;
 var UNMS_PASS = process.env.UNMS_PASS;
-var UNMS_KEY = process.env.UNMS_KEY1;
+var UNMS_KEY = process.env.UNMS_KEY;
 
 var data = qs.stringify({
     'password': UNMS_PASS,

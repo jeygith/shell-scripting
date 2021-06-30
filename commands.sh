@@ -345,6 +345,7 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/2/q1k4zu1c8vpkqm/Euro%202020%20hl%20-%20BBC%20-%20sc.mp4 && tail -f wget-log && rm -rf wget-log* &
 
 cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/4/3d451qetwdvqvv/bbc-www.fullmatchesandshows.com.mp4 && tail -f wget-log && rm -rf wget-log* &
 
@@ -591,7 +592,11 @@ links.toString();
 
 
 links = [];
-collection = [...document.getElementsByTagName("a")].forEach(child=>links.push(child.href));
+collection = [...document.getElementsByTagName("a")].forEach(child =>{
+  if(child.href.includes('.mp4')){
+    links.push(child.href)
+}
+  });
 links.toString();
 
 
@@ -701,3 +706,111 @@ SHELL=/bin/bash
 HOME=/
 
 /mnt/unionfs/drive1.anchor
+
+
+
+## host iperf3 server on london-centos
+sudo adduser iperf -M && sudo usermod -L iperf
+
+sudo vim /etc/systemd/system/iperf3-server@.service
+
+[Unit]
+Description=iperf3 server on port %i
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/iperf3 -s -1 -p %i
+Restart=always
+RuntimeMaxSec=3600
+User=iperf
+
+[Install]
+WantedBy=multi-user.target
+DefaultInstance=5201
+
+
+
+sudo systemctl daemon-reload
+for p in $(seq 9200 9210); do sudo systemctl enable iperf3-server@$p ; done
+
+for p in $(seq 9200 9210); do sudo systemctl start iperf3-server@$p ; done
+
+sudo firewall-cmd --add-port=9200-9210/tcp --permanent && sudo firewall-cmd --reload
+
+
+sudo firewall-cmd --add-port=9898/tcp --permanent && sudo firewall-cmd --reload
+
+etana
+fena
+
+
+//upload unms vault key
+curl 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock' \
+  -H 'authority: unms.githire-svr.dyn.jeffgithire.dev' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'x-auth-token: 9fe154ee-b90f-42a5-a2ae-d18eb5a96ae3' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  -H 'origin: https://unms.githire-svr.dyn.jeffgithire.dev' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://unms.githire-svr.dyn.jeffgithire.dev/nms/settings/vault' \
+  -H 'accept-language: en-KE,en-GB;q=0.9,en;q=0.8,ki-KE;q=0.7,ki;q=0.6,sw-KE;q=0.5,sw;q=0.4,en-US;q=0.3' \
+  -H 'cookie: toggle-cookie__client-contact-details=1; toggle-cookie__dashboard-financial-information=1; _delighted_web={%22FutSOUgy5edCcTk9%22:{%22_delighted_fst%22:{%22t%22:%221623151990566%22}}}; nms-session=dddd8264-f192-40d7-9e07-50e4321a5c44; nms-crm-php-session-id=c61fa98d5413d569cae0f77b3acf51c7; jwt={%22token%22:%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEwMDAsInVzZXJHcm91cElkIjoiZGEyZTFhMTQtN2M4NC0xMWU5LThhNmQtYWNiYzMyYmRjMzU3Iiwicm9sZXMiOlsiUk9MRV9TVVBFUl9BRE1JTiJdLCJjbGllbnRJZCI6bnVsbCwiZXhwIjoxNjI1MDQ2NTQyLCJoYXNUaWNrZXRpbmdWaWV3UGVybWlzc2lvbiI6dHJ1ZSwiaGFzVGlja2V0aW5nRWRpdFBlcm1pc3Npb24iOnRydWUsIm5hbWVGb3JWaWV3IjoiaWFtcm9vdCJ9.-hdkIMaLF4mHCY2X5KTd2lGSt4LPBPlffJDH97VsfHc%22%2C%22userId%22:1000}; io=52EAlmeflneJ7aMJAADK' \
+  --data-raw '{"passphrase":"pFxrbNEMg3:x((H?$zJ="}' \
+  --compressed \
+  --insecure
+
+
+
+
+
+curl --include \
+     --request POST \
+     --header "Accept: application/json" \
+     --data-raw '{"password": "cyberlink","username": "iamroot"}'\
+  'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/user/login'
+
+
+  {"password": "cyberlink","username": "iamroot"}
+  {
+  "type": "object",
+  "properties": {
+    "password": {
+      "type": "string",
+      "format": "password"
+    },
+    "username": {
+      "type": "string"
+    },
+    "sessionTimeout": {
+      "type": "number",
+      "description": "Token specific lifetime in miliseconds max to one week. Almost all api calls (user explicit actions, without technicall refresh calls) refresh token validity."
+    }
+  }
+}
+
+
+curl --location --request POST 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/user/login' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'password=cyberlink' \
+--data-urlencode 'username=iamroot' -i | grep -Fi 'x-auth-token:'
+
+
+
+curl 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H "x-auth-token: ${a}" \
+  --data-raw "{\"passphrase\":\"pFxrbNEMg3:x((H?$zJ=\"}" \
+  --verbose \
+  --insecure
+
+  curl -X POST "https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock" -H "accept: application/json" -H "x-auth-token: ${a}" -H "Content-Type: application/json" -d "{ \"passphrase\": \"pFxrbNEMg3:x((H?$zJ=\"}"
+
+
+x-auth-token: fcdbeb3a-068e-47cc-8911-df97d9cbaf17
+fcdbeb3a-068e-47cc-8911-df97d9cbaf17

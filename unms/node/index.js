@@ -1,8 +1,11 @@
 var axios = require('axios');
 var qs = require('qs');
+const dotenv = require('dotenv')
+
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    dotenv.config({ path: __dirname + '/.env' })
 }
+
 var UNMS_URL = process.env.UNMS_URL;
 var UNMS_USERNAME = process.env.UNMS_USERNAME;
 var UNMS_PASS = process.env.UNMS_PASS;

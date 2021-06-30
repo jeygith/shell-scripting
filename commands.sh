@@ -366,6 +366,10 @@ youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ex
 
 
 * * * * * /home/githire/shell-scripting/docker/restart-containers-cron.sh 2>&1 >> /home/githire/logs/restart-containers-cron.log
+*/2 * * * * $HOME/.nvm/versions/node/v13.5.0/bin/node $HOME/shell-scripting/unms/node/index.js 2>&1 >> $HOME/logs/unms-vault.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/846270e1-967a-4689-978b-6222ee2f285f
+
+
+/home/githire/shell-scripting/unms/node
 
 
 // ch media permissions

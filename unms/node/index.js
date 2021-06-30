@@ -1,12 +1,12 @@
 var axios = require('axios');
 var qs = require('qs');
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 var UNMS_URL = process.env.UNMS_URL;
 var UNMS_USERNAME = process.env.UNMS_USERNAME;
 var UNMS_PASS = process.env.UNMS_PASS;
-var UNMS_KEY = process.env.UNMS_KEY;
-console.log(UNMS_KEY);
-return 0;
-
+var UNMS_KEY = process.env.UNMS_KEY1;
 
 var data = qs.stringify({
     'password': UNMS_PASS,
@@ -14,10 +14,6 @@ var data = qs.stringify({
 });
 
 var uploadData = `{"passphrase":"${UNMS_KEY}"}`;
-
-console.log(uploadData);
-return 0;
-
 
 var config = {
     method: 'post',

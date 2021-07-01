@@ -1,6 +1,6 @@
 from plexapi.myplex import MyPlexAccount
-account = MyPlexAccount('githireh@gmail.com', 'sE8g6b.XY!iUmpJ')
-plex = account.resource('githire-svr').connect()
+account = MyPlexAccount('', '')
+plex = account.resource('').connect()
 
 
 movies = plex.library.section('Movies')

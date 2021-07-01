@@ -349,9 +349,9 @@ https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Sup
 https://doc.downloadha.com/h/Documentaries/September2020/Super.Factories/S01/Super.Factories.S01E04.Volkswagon.Chattanooga.1080p.HDTV.x264.AAC.MVGroup_www.Downloadha.com_.mp4
 
 
-cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/0/ki94tx7136gjp9/motd%20-%20fms.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day/Season 2020" && wget https://d1.anafast.com:8080/files/2/q1k4zu1c8vpkqm/Euro%202020%20hl%20-%20BBC%20-%20sc.mp4 && tail -f wget-log && rm -rf wget-log* &
 
-cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/7/asx843ubjwfpcz/motd%202.mp4 && tail -f wget-log && rm -rf wget-log* &
+cd "/media/8TB/tvshows/Match of the Day 2/Season 2020" && wget https://d1.anafast.com:8080/files/4/3d451qetwdvqvv/bbc-www.fullmatchesandshows.com.mp4 && tail -f wget-log && rm -rf wget-log* &
 
 
 
@@ -370,6 +370,10 @@ youtube-dl -o "Ludacris (lossless)/Ludacris - Act a Fool" "--format bestvideo[ex
 
 
 * * * * * /home/githire/shell-scripting/docker/restart-containers-cron.sh 2>&1 >> /home/githire/logs/restart-containers-cron.log
+*/2 * * * * $HOME/.nvm/versions/node/v13.5.0/bin/node $HOME/shell-scripting/unms/node/index.js 2>&1 >> $HOME/logs/unms-vault.log && curl -fsS -m 10 --retry 5 -o /dev/null 10.0.0.2:8003/ping/846270e1-967a-4689-978b-6222ee2f285f
+
+
+/home/githire/shell-scripting/unms/node
 
 
 // ch media permissions
@@ -571,6 +575,8 @@ scp githire-svr:/home/githire/snmp/mac/snmpd.conf /tmp/ && sudo cp /tmp/snmpd.co
 sudo touch swap.img && sudo chmod 600 swap.img && sudo dd if=/dev/zero of=swap.img bs=2048k count=1000 && sudo mkswap swap.img && sudo swapon swap.img
 
 
+// renew githire-svr certificates certbot
+
 certbot certonly --manual --manual-auth-hook /config/acme-dns-auth.py --preferred-challenges dns --debug-challenges -d \*.githire-svr.dyn.jeffgithire.dev -d githire-svr.dyn.jeffgithire.dev --dry-run
 
 
@@ -594,7 +600,11 @@ links.toString();
 
 
 links = [];
-collection = [...document.getElementsByTagName("a")].forEach(child=>links.push(child.href));
+collection = [...document.getElementsByTagName("a")].forEach(child =>{
+  if(child.href.includes('.mp4')){
+    links.push(child.href)
+}
+  });
 links.toString();
 
 
@@ -621,3 +631,211 @@ sudo dscl . -passwd /Users/betty 12345
 # manual plex autoscan trigger url
 http://10.0.0.2:3030/triggers/manual?dir=%2Ftest%2Fone&dir=%2Ftest%2Ftwo
 
+
+
+// split single flac file
+shnsplit -f Buju\ Banton\ -\ Too\ Bad.cue -o flac Buju\ Banton\ -\ Too\ Bad.ape
+shnsplit -f Buju\ Banton\ -\ Dubbing\ With\ the\ Banton.cue -t %n-%t -o flac Buju\ Banton\ -\ Dubbing\ With\ the\ Banton.ape
+
+
+// erx
+show version
+show system storage
+show system image storage
+delete system image
+#add system image https://dl.ui.com/firmwares/edgemax/v2.0.9-hotfix.1/ER-e50.v2.0.9-hotfix.1.5371034.tar
+add system image https://dl.ui.com/firmwares/edgemax/v2.0.9-hotfix.2/ER-e50.v2.0.9-hotfix.2.5402463.tar
+show system image
+
+
+set firewall options mss-clamp interface-type vti
+set firewall options mss-clamp mss 1350
+
+curl --insecure https://10.0.0.2:8443/v2.1/nms/version
+
+tail -f /var/log/unms.error
+tail -f /var/log/unms.log
+
+
+
+wss://10.0.0.2:8443+VHDIMP8mUYwC7xNNFpvbA57RFlLqOJXiVz24X8pa3jE3v1B2+allowUntrustedCertificate
+wss://githireh.unmsapp.com:443+ipaQ3sw_Jxy_blFt5xFAUXWcG3M65wYQwjEsfe69CsQAAAAA+allowUntrustedCertificate
+
+
+dig google.com @64.227.45.220 -p 5053
+dig google.com @10.0.0.198 -p 5053
+
+
+
+curl 'https://192.168.128.2:5001/api/License' \
+  -H 'authority: 10.0.0.2:5001' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'pragma: no-cache' \
+  -H 'cache-control: no-cache' \
+  -H 'x-xsrf-token: CfDJ8NtqwfZic1ZJp3KPcu2_Zi3yYSbZ-g2EDLcTajG1uqxcUAAQKqM0UEA6IV5gYY9f2_39waAvoM3weVl-AV8yYiN52fIhAYBHtJMeAjmP1dgjREIBLz53J9VA7Diiikn11LwKrmmqsoOcnKIF3SR4bYmTZ1JToAzTZWTOLsyp8s0C' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36' \
+  -H 'sec-ch-ua: "Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://192.168.128.2:5001/' \
+  -H 'accept-language: en-KE,en-GB;q=0.9,en;q=0.8,ki-KE;q=0.7,ki;q=0.6,sw-KE;q=0.5,sw;q=0.4,en-US;q=0.3' \
+  -H $'cookie: remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6InVUTG95N2M3XC9zTTVVQlBDTVAzRTRRPT0iLCJ2YWx1ZSI6IlllZHd5RkFSOU1oRFBSY2NmcVk1M290cEFnUzRLeWtqT2s2ajVuREtwdjMyNVdycVN2NFM5K1QyRng3MnZDR0JvQUM5d1lhWGVTQUZJTCtKNURIUGVIY0U0aFgzTGNkYXJpRjg5M2hwMkMrdXdNUk93ejU5dmhIZ0NOYlFaS3RDK2VqZXV1alhwV0xJSlpnaU53RWJlNEx3SVBjTTJDTnRTOUFXOHlzSVd5cz0iLCJtYWMiOiIyY2U3NDA1OGZjNWUyYTM0YjZlYzIzMTJhODI5ZTFhMzE0ZGVhNDkzMDFmNzZiYjZiYTc2OWViYjc5YTk3NDRkIn0%3D; PHPSESSID=jnsso4j5t8e195cr60vgd5c3a2; CSRF=7c332ea358; R_SESS=token-9zcnv:nwjkzz2dr96kbqh5jzk5m7h4ggw5448bgm7xxrql476cqn49q82tcl; R_USERNAME=admin; R_PCS=dark; R_LOCALE=en-us; key=6a07a3627e529fade13483fa85fd28dfbcd779e8df967afff5ec623f34d6555e; index=diskover-2020-09-18; sort2=filename; sortorder2=asc; path=%2Fdata; filter=1; mtime=0; use_count=0; show_files=1; maxdepth=2; minhardlinks=66; mindupes=11031; crawlfinished=1; resultsize=50; sort=filesize; sortorder=desc; account="\u0021nCLqoHd3uDjIqGs1SEt22g==?gASVFwAAAAAAAACMB2FjY291bnSUjAdnaXRoaXJllIaULg=="; io=1313bdd63e3a4de19303765706e95047; session=.eJxty0EKwzAMRNGriFn7BL5JKSEYOnEEiQ2STBchd69Lt10NH95cWLej-E5Hfl6QmIOT7qUSCY8-pJEviS5Hr9pkU_PAcqf_uBil9fcX13nTNumS8Mt1Zg4bTBhOa-UkMqrGrkbcH_D-L7E.YGWjzA.MuLhu5v6q-sUSX04P9qpOaZ-teM; .AspNetCore.Session=CfDJ8NtqwfZic1ZJp3KPcu2%2FZi3mCWJUZCeFb5B%2FvZcX4m8erTFG%2BFXBfaWwCJpBatB5qJ2VPJNrL9Su7fH23Juy8rlDbTsCbmUm8I8%2BY13Cqt8h8by1zMkS8O3wpoXQWUzOIWIMR3BZDTbR3PFRNywci7CFmE5J2beELaTr%2FHoBqQke; .AspNetCore.Cookies=CfDJ8NtqwfZic1ZJp3KPcu2_Zi3uE_si3ZNzEXYgVz6iGfCPUn-U7M35uc7GN3FUwmEbvQpB5bWq_NbWr5FvkteBhBZd619efohltToN3SGUAB8TRcW0tVPDBd8Gyi3d0oRT_1f-1wsq6WVkBfigy__r5ZnE7MqULGoV9a4dss8wyguwgj1pIGW0l5PCU2qD5DZQ0geLuQMsO3B0OrAo-VqP9HHlC25KomjSoraMJDl45w_L510_KFIHrQQ7_46wB0QVnb5Gh7zahO25adXx5ChZNcAJ5mV9m8Aj01glTvslqozutjX5Kr-oS4Uc5Vv5QBHv8q1x1D0dZIGx8QbauIOTTGQK1jRurdYHZKr_Ctxh3_x3Yx_jtrzzXK62GhxiKdNczie1lo84qy9eZL9DUXcKE5CUM2sz2UDk-wI2aeeDTxZm; XSRF-TOKEN=CfDJ8NtqwfZic1ZJp3KPcu2_Zi3yYSbZ-g2EDLcTajG1uqxcUAAQKqM0UEA6IV5gYY9f2_39waAvoM3weVl-AV8yYiN52fIhAYBHtJMeAjmP1dgjREIBLz53J9VA7Diiikn11LwKrmmqsoOcnKIF3SR4bYmTZ1JToAzTZWTOLsyp8s0C; CmmSession=c323f717-4542-1613-0b6a-8c650a0282eb' \
+  --compressed \
+  --insecure
+
+
+## unms fix siridb error
+sudo docker-compose -p unms -f ~unms/app/docker-compose.yml down && cd /home/unms/data/siridb && sudo rm -rf unms && sudo docker-compose -p unms -f ~unms/app/docker-compose.yml up -d
+
+
+sudo ~unms/app/unms-cli stop  && curl -fsSL https://unms.com/v1/install > /tmp/unms_inst.sh && sudo bash /tmp/unms_inst.sh && sudo docker ps -a
+
+sudo rm -rf ~unms/data && sudo rm -rf ~unms/app
+
+// original
+wss://unms.githire-svr.dyn.jeffgithire.dev:8443+VHDIMP8mUYwC7xNNFpvbA57RFlLqOJXiVz24X8pa3jE3v1B2+allowSelfSignedCertificate
+
+wss://10.0.0.2:8443+VHDIMP8mUYwC7xNNFpvbA57RFlLqOJXiVz24X8pa3jE3v1B2+allowUntrustedCertificate
+
+wss://10.0.0.2:8443+NmI850RUZJA4dAvUc8qHQoLHBQWryZw9WPsRFkxqcY8AAAAA+allowUntrustedCertificate
+
+
+wss://unms.githire-svr.dyn.jeffgithire.dev:8443+VHDIMP8mUYwC7xNNFpvbA57RFlLqOJXiVz24X8pa3jE3v1B2+allowSelfSignedCertificate
+
+## pihole whitelist
+git clone https://github.com/anudeepND/whitelist.git && sudo python3 whitelist/scripts/whitelist.py
+
+git clone https://github.com/anudeepND/whitelist.git && sudo python3 whitelist/scripts/whitelist.py --dir ~/docker/pihole/etc-pihole/ --docker
+
+youtube-dl.exe -i --download-archive otile.txt https://www.youtube.com/channel/UCvA_SWl8Ti3hvbmJyrLFqZQ/videos -f 37/22/18/best --add-metadata --embed-subs --write-thumbnail --all-subs -o "%%(uploader)s/%%(upload_date)s-%%(title)s-%%(id)s.%%(ext)s"
+
+youtube-dl https://www.youtube.com/channel/UCvA_SWl8Ti3hvbmJyrLFqZQ/videos --format (bestvideo[width>=1920]/bestvideo)+bestaudio/best --download-archive archive.txt --output %%(uploader)s/%%(upload_date)s.%%(title)s.%%(id)s.%%(ext)s --restrict-filenames --merge-output-format mkv --ignore-errors
+
+
+wget http://103.133.135.242/Data/movies/hollywood/2015/Steve%20Jobs%20The%20Man%20In%20The%20Machine%20%282015%29%20%5B1080p%5D/Steve%20Jobs%20The%20Man%20In%20The%20Machine%20%282015%29%20%5B1080p%5D.mp4 &
+
+
+mkdir /media/8TB/.anchors && touch /media/8TB/.anchors/local.anchor
+
+vim /etc/postfix/main.cf
+
+githire@githire-svr.localdomain
+
+echo "Mail delivery test" | mail -s "[Server] New e-mail" githire@githire-svr.localdomain
+
+
+MAILTO="githire@githire-svr.localdomain"
+SHELL=/bin/bash
+HOME=/
+
+/mnt/unionfs/drive1.anchor
+
+
+
+## host iperf3 server on london-centos
+sudo adduser iperf -M && sudo usermod -L iperf
+
+sudo vim /etc/systemd/system/iperf3-server@.service
+
+[Unit]
+Description=iperf3 server on port %i
+After=syslog.target network.target
+
+[Service]
+ExecStart=/usr/bin/iperf3 -s -1 -p %i
+Restart=always
+RuntimeMaxSec=3600
+User=iperf
+
+[Install]
+WantedBy=multi-user.target
+DefaultInstance=5201
+
+
+
+sudo systemctl daemon-reload
+for p in $(seq 9200 9210); do sudo systemctl enable iperf3-server@$p ; done
+
+for p in $(seq 9200 9210); do sudo systemctl start iperf3-server@$p ; done
+
+sudo firewall-cmd --add-port=9200-9210/tcp --permanent && sudo firewall-cmd --reload
+
+
+sudo firewall-cmd --add-port=9898/tcp --permanent && sudo firewall-cmd --reload
+
+etana
+fena
+
+
+//upload unms vault key
+curl 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock' \
+  -H 'authority: unms.githire-svr.dyn.jeffgithire.dev' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'x-auth-token: 9fe154ee-b90f-42a5-a2ae-d18eb5a96ae3' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  -H 'origin: https://unms.githire-svr.dyn.jeffgithire.dev' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://unms.githire-svr.dyn.jeffgithire.dev/nms/settings/vault' \
+  -H 'accept-language: en-KE,en-GB;q=0.9,en;q=0.8,ki-KE;q=0.7,ki;q=0.6,sw-KE;q=0.5,sw;q=0.4,en-US;q=0.3' \
+  -H 'cookie: toggle-cookie__client-contact-details=1; toggle-cookie__dashboard-financial-information=1; _delighted_web={%22FutSOUgy5edCcTk9%22:{%22_delighted_fst%22:{%22t%22:%221623151990566%22}}}; nms-session=dddd8264-f192-40d7-9e07-50e4321a5c44; nms-crm-php-session-id=c61fa98d5413d569cae0f77b3acf51c7; jwt={%22token%22:%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEwMDAsInVzZXJHcm91cElkIjoiZGEyZTFhMTQtN2M4NC0xMWU5LThhNmQtYWNiYzMyYmRjMzU3Iiwicm9sZXMiOlsiUk9MRV9TVVBFUl9BRE1JTiJdLCJjbGllbnRJZCI6bnVsbCwiZXhwIjoxNjI1MDQ2NTQyLCJoYXNUaWNrZXRpbmdWaWV3UGVybWlzc2lvbiI6dHJ1ZSwiaGFzVGlja2V0aW5nRWRpdFBlcm1pc3Npb24iOnRydWUsIm5hbWVGb3JWaWV3IjoiaWFtcm9vdCJ9.-hdkIMaLF4mHCY2X5KTd2lGSt4LPBPlffJDH97VsfHc%22%2C%22userId%22:1000}; io=52EAlmeflneJ7aMJAADK' \
+  --data-raw '{"passphrase":"pFxrbNEMg3:x((H?$zJ="}' \
+  --compressed \
+  --insecure
+
+
+
+
+
+curl --include \
+     --request POST \
+     --header "Accept: application/json" \
+     --data-raw '{"password": "cyberlink","username": "iamroot"}'\
+  'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/user/login'
+
+
+  {"password": "cyberlink","username": "iamroot"}
+  {
+  "type": "object",
+  "properties": {
+    "password": {
+      "type": "string",
+      "format": "password"
+    },
+    "username": {
+      "type": "string"
+    },
+    "sessionTimeout": {
+      "type": "number",
+      "description": "Token specific lifetime in miliseconds max to one week. Almost all api calls (user explicit actions, without technicall refresh calls) refresh token validity."
+    }
+  }
+}
+
+
+curl --location --request POST 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/user/login' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'password=cyberlink' \
+--data-urlencode 'username=iamroot' -i | grep -Fi 'x-auth-token:'
+
+
+
+curl 'https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H "x-auth-token: ${a}" \
+  --data-raw "{\"passphrase\":\"pFxrbNEMg3:x((H?$zJ=\"}" \
+  --verbose \
+  --insecure
+
+  curl -X POST "https://unms.githire-svr.dyn.jeffgithire.dev/nms/api/v2.1/vault/credentials/unlock" -H "accept: application/json" -H "x-auth-token: ${a}" -H "Content-Type: application/json" -d "{ \"passphrase\": \"pFxrbNEMg3:x((H?$zJ=\"}"
+
+
+x-auth-token: fcdbeb3a-068e-47cc-8911-df97d9cbaf17
+fcdbeb3a-068e-47cc-8911-df97d9cbaf17

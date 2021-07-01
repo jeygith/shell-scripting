@@ -618,6 +618,6 @@ sudo dscl . -create /Users/betty PrimaryGroupID 20
 sudo dscl . -create /Users/betty NFSHomeDirectory /Local/Users/betty
 sudo dscl . -passwd /Users/betty 12345
 
-
-
+# manual plex autoscan trigger url
+http://10.0.0.2:3030/triggers/manual?dir=%2Ftest%2Fone&dir=%2Ftest%2Ftwo
 
